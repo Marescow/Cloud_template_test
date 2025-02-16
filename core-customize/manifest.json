@@ -4,6 +4,7 @@
     "extensions": [
         "cloudmediaconversion",
         "mediaconversionbackoffice"
+        "yb2bacceleratorstorefront",
     ],
     "storefrontAddons": [
         {
