@@ -1,0 +1,11 @@
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/cockpitng/cng/scss/cockpitng-globals.scss';
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/backoffice/scss/backoffice-variables.scss';
+
+
+
+
+/*Icons for explorer tree */
+div.yw-explorerTree .y-tree-icon {
+  @include setTreeIconGlyph("hmc.cms2", "crm-sales");
+}
+

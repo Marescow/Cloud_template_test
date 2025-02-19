@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd"
+						 id="com.hybris.cockpitng.widgets.common.globalLinks">
+	<name>Global Links</name>
+	<description>Global Links Widget</description>
+	<defaultTitle>Global Links</defaultTitle>
+	<author>hybris</author>
+	<version>1.0</version>
+	<view src="globalLinks.zul"/>
+
+	<keywords>
+		<keyword>Global</keyword>
+		<keyword>Links</keyword>
+	</keywords>
+	<controller class="com.hybris.backoffice.widgets.globallinks.GlobalLinksController"/>
+
+	<settings>
+		<setting key="linksComponentName" type="String" default-value="global-links"/>
+		<setting key="hideIfEmpty" type="Boolean" default-value="true"/>
+	</settings>
+
+</widget-definition>

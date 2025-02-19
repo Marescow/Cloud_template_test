@@ -1,0 +1,11 @@
+#Ant properties
+#Wed Feb 05 18:00:09 CET 2025
+version.api=2205
+vendor=hybris
+group.id=de.hybris.platform
+name=rulebuilderbackoffice
+description=rulebuilderbackoffice
+builddate=20250205 1758
+releasedate=20220601 2009
+version=2205.34
+module.name=platform-module

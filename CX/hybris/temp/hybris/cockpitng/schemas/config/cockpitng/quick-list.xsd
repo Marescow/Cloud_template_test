@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://www.hybris.com/cockpitng/component/quick-list"
+        xmlns:yc="http://www.hybris.com/cockpitng/config/common"
+        targetNamespace="http://www.hybris.com/cockpitng/component/quick-list"
+        elementFormDefault="qualified">
+
+    <xs:import namespace="http://www.hybris.com/cockpitng/config/common"
+               schemaLocation="classpath://schemas/config/hybris/common-config.xsd"/>
+
+    <xs:element name="quick-list">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="yc:imagePreview">
+                    <xs:sequence >
+                        <xs:element name="attribute" type="attribute" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="attribute">
+        <xs:attribute name="qualifier" type="xs:string" use="required" />
+    </xs:complexType>
+</xs:schema>

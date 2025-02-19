@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.zkoss.org/2005/zul"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.hybris.com/schema/cockpitng/zul/zul.xsd">
+
+	<div id="networkChartContainer" sclass="yw-visjs-chart-container">
+		<widgetslot slotID="networkchartNotificationarea" sclass="yw-notification"/>
+		<actions id="actionSlot" if="${widgetSettings.actionSlotComponentId != null}" config="${widgetSettings.actionSlotComponentId}" group="common" sclass="action-slot"/>
+		<networkchart id="networkChart"/>
+		<div id="controlsButtonContainer" sclass="yw-button-container">
+			<button id="cancelButton" sclass="cancel-button y-btn-transparent" label="${labels.button.cancel}"/>
+			<button id="saveButton" sclass="save-button y-btn-primary" label="${labels.button.save}"/>
+			<button id="refreshButton" sclass="refresh-button y-btn-secondary" label="${labels.button.refresh}"/>
+		</div>
+	</div>
+
+</widget>

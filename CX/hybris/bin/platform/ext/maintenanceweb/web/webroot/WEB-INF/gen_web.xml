@@ -1,0 +1,19 @@
+
+<!--
+Créé automatiquement par JspC de Apache Tomcat.
+-->
+
+
+    <servlet>
+        <servlet-name>org.apache.jsp.WEB_002dINF.jsp.index_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.WEB_002dINF.jsp.index_jsp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.WEB_002dINF.jsp.index_jsp</servlet-name>
+        <url-pattern>/WEB-INF/jsp/index.jsp</url-pattern>
+    </servlet-mapping>
+<!--
+Fin du contenu généré automatiquement par JspC de Apache Tomcat.
+-->
+

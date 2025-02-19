@@ -1,0 +1,26 @@
+@import "cockpitng-globals.scss";
+
+.ye-validation-error  {
+    background: $validation__error--bg-color;
+    color: $validation__error--color;
+}
+.ye-validation-warn {
+    background: $validation__warn--bg-color;
+    color: $validation__warn--color;
+}
+.ye-validation-info {
+    background: $validation__info--bg-color;
+    color: $validation__info--color;
+}
+
+// iframe => rich editor => editor area
+.cke_editable p {
+    margin: 0px;
+}
+
+// iframe rich editor popover 
+.cke.cke_combopanel .cke_panel_frame {
+    .cke_panel_listItem a {
+        border: none;
+    }
+}

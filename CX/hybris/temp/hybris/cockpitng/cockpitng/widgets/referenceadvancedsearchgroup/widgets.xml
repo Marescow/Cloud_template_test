@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widgets>
+    <widget id="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" widgetDefinitionId="com.hybris.cockpitng.backoffice.referenceadvancedsearch" slotId="composedRootSlot" template="false">
+        <widget id="advancedSearchNotificationWidget" widgetDefinitionId="com.hybris.backoffice.notificationarea"
+                slotId="advancedSearchNotificationArea" template="false">
+            <setting key="notificationId" type="String">advancedSearch</setting>
+            <setting key="widgetStyleAttribute" type="String"/>
+            <setting key="debugLog" type="Boolean">false</setting>
+            <setting key="widgetStyleClass" type="String"/>
+            <setting key="stackSize" type="Integer">3</setting>
+            <setting key="useDynamicNotificationId" type="Boolean">true</setting>
+            <virtual-sockets/>
+        </widget>
+        <widget id="referenceAdvancedSearch" widgetDefinitionId="com.hybris.cockpitng.advancedsearch" slotId="advancedSearch" template="false">
+            <widget id="referenceAdvancedSearchEngine"
+                    widgetDefinitionId="com.hybris.cockpitng.widgets.common.advancedsearchengine"
+                    slotId="cockpitWidgetChildrenInvisible" template="false">
+                <setting key="defaultPageSize" type="Integer">50</setting>
+                <virtual-sockets/>
+            </widget>
+            <setting key="actionSlotComponentName" value="_empty"/>
+            <virtual-sockets/>
+        </widget>
+        <widget id="referenceCollectionBrowser" widgetDefinitionId="com.hybris.cockpitng.collectionBrowser" slotId="collectionBrowser" template="false">
+            <setting key="multiSelect" type="Boolean">true</setting>
+            <setting key="actionSlotComponentId" type="java.lang.String">referenceSearchListViewActions</setting>
+            <setting key="socketDataType_$T" type="java.lang.String">java.lang.Object</setting>
+            <virtual-sockets/>
+        </widget>
+        <virtual-sockets/>
+    </widget>
+
+    <widget-connection sourceWidgetId="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" outputId="advancedSearchInitCtx" targetWidgetId="referenceAdvancedSearch" inputId="initContext"/>
+    <widget-connection sourceWidgetId="referenceAdvancedSearch" outputId="searchData" targetWidgetId="referenceAdvancedSearchEngine" inputId="searchData"/>
+    <widget-connection sourceWidgetId="referenceAdvancedSearchEngine" outputId="pageable" targetWidgetId="referenceCollectionBrowser" inputId="pageable"/>
+    <widget-connection sourceWidgetId="referenceAdvancedSearchEngine" outputId="pageable" targetWidgetId="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" inputId="resetSelection"/>
+    <widget-connection sourceWidgetId="referenceCollectionBrowser" outputId="selectedItems" targetWidgetId="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" inputId="selectedItems"/>
+    <widget-connection sourceWidgetId="referenceCollectionBrowser" outputId="selectedItem" targetWidgetId="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" inputId="selectedItem"/>
+    <widget-connection sourceWidgetId="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" outputId="selectedReferences" targetWidgetId="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" inputId="selectedReferencesOutputForward"/>
+    <widget-connection sourceWidgetId="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" outputId="cancel" targetWidgetId="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup" inputId="cancelOutputForward"/>
+</widgets>

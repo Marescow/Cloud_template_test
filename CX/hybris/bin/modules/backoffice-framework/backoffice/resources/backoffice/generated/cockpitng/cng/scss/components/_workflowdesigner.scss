@@ -1,0 +1,65 @@
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/cockpitng/cng/scss/cockpitng-globals.scss';
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/backoffice/scss/backoffice-variables.scss';
+
+@import "../support/_workflowdesigner-variables.scss";
+
+@mixin _workflow-designer-toolbar-icon ($icon-name) {
+	content: _getIconGlyphContentValue($icon-name);
+    font-size: $font-size__large;
+    font-family: $font-family__icon;
+//     color: $icon-color;
+    position: absolute;
+    left: $workflowdesigner__toolbar-button-icon-left;
+    top: $workflowdesigner__toolbar-button-icon--size;
+}
+
+.yw-workflow-designer {
+	&-modal {
+		height: 100%;
+
+		.yw-visjs {
+			&-empty-chart {
+				background: $workflowdesigner__chart-empty--bg-image;
+			}
+		}
+		.yw-button-container {
+			border-top: $workflowdesigner__button-container--border-top;
+			padding: $workflowdesigner__button-container--padding;
+		}
+
+		.yw-notification {
+			top: $workflowdesigner__notification-bar--top;
+			&-message {
+				box-shadow: none;
+			}
+		}
+	}
+	&-add-node-popup {
+		&.z-menupopup {
+			min-width: $workflowdesigner__add-popup--min-width;
+			
+			.z-menuitem {	
+				border-top: $workflowdesigner__add-popup-item--border-top;
+				background-color: transparent;
+				color: $workflowdesigner__add-popup-item--color;
+
+				&:first-child {
+					border-top: none;
+				}
+
+				.z-menuitem-content {
+					color: $workflowdesigner__add-popup-item-content--color;
+
+					&:hover {
+						background-color: $workflowdesigner__add-popup-item-content-hover--bg-color;
+						color: $workflowdesigner__add-popup-item-text-hover--color;
+					}
+				}
+
+				&-image {
+					display: none;
+				}
+			}
+		}
+	}
+}

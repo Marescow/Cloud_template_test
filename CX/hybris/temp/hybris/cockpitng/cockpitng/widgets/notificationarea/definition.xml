@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd"
+						 id="com.hybris.backoffice.notificationarea">
+	<name>Notification Area</name>
+	<defaultTitle>Notification Area</defaultTitle>
+	<description>This widget listens for global and custom notifications which are triggered by other widgets.</description>
+	<author>hybris</author>
+	<version>1.0</version>
+    <sockets>
+        <output id="selectedElement" type="java.lang.Object" />
+    </sockets>
+	<controller class="com.hybris.backoffice.widgets.notificationarea.NotificationController"/>
+	<view src="notificationarea.zul"/>
+	<keywords>
+		<keyword>Backoffice</keyword>
+	</keywords>
+	<settings>
+		<setting key="notificationId" default-value="" type="String"/>
+		<setting key="stackSize" default-value="3" type="Integer" />
+		<setting key="debugLog" default-value="false" type="Boolean" />
+		<setting key="useDynamicNotificationId" default-value="false" type="Boolean"/>
+	</settings>
+</widget-definition>

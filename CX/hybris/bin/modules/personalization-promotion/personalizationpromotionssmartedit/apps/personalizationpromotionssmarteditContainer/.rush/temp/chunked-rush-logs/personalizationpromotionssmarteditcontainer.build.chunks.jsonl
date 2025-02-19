@@ -1,0 +1,15 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for personalizationpromotionssmarteditcontainer\n"}
+{"kind":"O","text":"Configuration read personalizationpromotionssmarteditcontainer\n"}
+{"kind":"O","text":"Loading plugins personalizationpromotionssmarteditcontainer\n"}
+{"kind":"O","text":"Generating bundle personalizationpromotionssmarteditcontainer\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(4): src/personalizationpromotionssmarteditContainer.ts\n"}
+{"kind":"O","text":"(5): \u0000tslib.js\n"}
+{"kind":"O","text":"(5): src/promotionsComponent/PromotionsSmarteditPromotionComponent.ts\n"}
+{"kind":"O","text":"(5): src/utils/constants.ts\n"}
+{"kind":"O","text":"(5): SE-LEGACY-JAVASCRIPT\n"}
+{"kind":"O","text":"(5): ../styling/style.less\n"}
+{"kind":"O","text":"Bundle created personalizationpromotionssmarteditcontainer\n"}
+{"kind":"O","text":"- Generated 6 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

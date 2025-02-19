@@ -1,0 +1,38 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for personalizationsmartedit\n"}
+{"kind":"O","text":"Configuration read personalizationsmartedit\n"}
+{"kind":"O","text":"Loading plugins personalizationsmartedit\n"}
+{"kind":"O","text":"Generating bundle personalizationsmartedit\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(2): src/personalizationsmartedit.ts\n"}
+{"kind":"O","text":"(15): \u0000tslib.js\n"}
+{"kind":"O","text":"(15): src/combinedView/index.ts\n"}
+{"kind":"O","text":"(16): src/componentLightUpDecorator/index.ts\n"}
+{"kind":"O","text":"(17): src/contextMenu/index.ts\n"}
+{"kind":"O","text":"(19): src/contextMenu/ShowActionList/ShowActionListComponent.ts\n"}
+{"kind":"O","text":"(20): src/contextMenu/ShowActionListModule.ts\n"}
+{"kind":"O","text":"(20): src/contextMenu/ShowComponentInfoList/ShowComponentInfoListComponent.ts\n"}
+{"kind":"O","text":"(20): src/customizeView/CustomizeViewModule.ts\n"}
+{"kind":"O","text":"(20): src/customizeView/CustomizeViewServiceInnerProxy.ts\n"}
+{"kind":"O","text":"(21): src/service/PersonalizationsmarteditComponentHandlerService.ts\n"}
+{"kind":"O","text":"(22): src/service/PersonalizationsmarteditContextualMenuService.ts\n"}
+{"kind":"O","text":"(23): src/service/servicesModule.ts\n"}
+{"kind":"O","text":"(26): src/sharedSlotDecorator/SharedSlotComponent.ts\n"}
+{"kind":"O","text":"(26): SE-LEGACY-JAVASCRIPT\n"}
+{"kind":"O","text":"(26): src/combinedView/CombinedViewComponentLightUpDecorator.ts\n"}
+{"kind":"O","text":"(26): src/componentLightUpDecorator/ComponentLightUpDecorator.ts\n"}
+{"kind":"O","text":"(26): src/contextMenu/PersonalizationsmarteditContextMenuServiceInnerProxy.ts\n"}
+{"kind":"O","text":"(26): src/contextMenu/ShowComponentInfoList/index.ts\n"}
+{"kind":"O","text":"(27): src/service/index.ts\n"}
+{"kind":"O","text":"(28): src/service/PersonalizationsmarteditCustomizeViewHelper.ts\n"}
+{"kind":"O","text":"(28): src/constants.ts\n"}
+{"kind":"O","text":"(28): src/service/PersonalizationsmarteditContextServiceInner.ts\n"}
+{"kind":"O","text":"(28): src/service/PersonalizationsmarteditContextServiceInnerProxy.ts\n"}
+{"kind":"O","text":"(28): src/service/PersonalizationsmarteditContextServiceInnerReverseProxy.ts\n"}
+{"kind":"O","text":"(28): src/service/PersonalizationsmarteditRestService.ts\n"}
+{"kind":"O","text":"(28): src/contextMenu/ShowComponentInfoList/ShowComponentInfoListModule.ts\n"}
+{"kind":"O","text":"(28): src/service/types.ts\n"}
+{"kind":"O","text":"(28): ../styling/style.less\n"}
+{"kind":"O","text":"Bundle created personalizationsmartedit\n"}
+{"kind":"O","text":"- Generated 29 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "SAP-icons-horizon";
+    src: url("font/SAP-Horizon/SAP-icons.eot");
+    src: url("font/SAP-Horizon/SAP-icons.eot?#iefix") format("embedded-opentype"),
+         url("font/SAP-Horizon/SAP-icons.woff") format("woff"),
+         url("font/SAP-Horizon/SAP-icons.ttf") format("truetype");
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

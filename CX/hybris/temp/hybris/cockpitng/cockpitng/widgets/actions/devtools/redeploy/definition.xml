@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<action-definition id="com.hybris.cockpitng.actions.devtools.redeploy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/action-definition.xsd">
+
+    <name>Redeploy backoffice extensions</name>
+    <description>Redeploy backoffice extensions</description>
+    <author>SAP hybris</author>
+    <version>1.0</version>
+
+    <actionClassName>com.hybris.cockpitng.actions.devtools.RedeployAction</actionClassName>
+
+    <inputType>java.lang.Object</inputType>
+    <outputType>java.lang.Object</outputType>
+
+    <iconUri>redeploy</iconUri>
+
+</action-definition>

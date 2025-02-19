@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
+<?page title="${cockpitProperties.getProperty('cockpitng.loginTitle')}" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href='${themeStyleService.getCurrentThemeStyle()}'?>
+<?link rel="stylesheet" type="text/css" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.css") ? "./cng/css/cockpit.css" : cockpitProperties.getProperty("cockpitng.mainpage.css")}'?>
+<?link rel="stylesheet" type="text/css" href='${empty cockpitProperties.getProperty("cockpitng.loginpage.css") ? "./cng/css/login.css" : cockpitProperties.getProperty("cockpitng.loginpage.css")}'?>
+<?link rel="shortcut icon" type="image/x-icon" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.favicon") ? "./cng/images/favicon.ico" : cockpitProperties.getProperty("cockpitng.mainpage.favicon")}'?>
+<?link rel="icon" type="image/x-icon" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.favicon") ? "./cng/images/favicon.ico" : cockpitProperties.getProperty("cockpitng.mainpage.favicon")}'?>
+<?link rel="apple-touch-icon" sizes="180x180" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.apple_touch_icon") ? "./cng/images/apple_touch_icon.png" : cockpitProperties.getProperty("cockpitng.mainpage.apple_touch_icon")}' ?>
+<?link rel="icon" type="image/png" sizes="32x32" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.favicon_32_32") ? "./cng/images/favicon-32x32.png" : cockpitProperties.getProperty("cockpitng.mainpage.favicon_32_32")}'?>
+<?link rel="icon" type="image/png" sizes="16x16" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.favicon_16_16") ? "./cng/images/favicon-16x16.png" : cockpitProperties.getProperty("cockpitng.mainpage.favicon_16_16")}'?>
+<?link rel="icon" type="image/png" sizes="192x192"  href='${empty cockpitProperties.getProperty("cockpitng.mainpage.android_icon") ? "./cng/images/android-icon-192x192.png" : cockpitProperties.getProperty("cockpitng.mainpage.android_icon")}' ?>
+<?link rel="mask-icon" color="#0faaff" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.safari_pinned_tab") ? "./cng/images/safari-pinned-tab.svg" : cockpitProperties.getProperty("cockpitng.mainpage.safari_pinned_tab")}'?>
+<?import org.zkoss.util.Locales?>
+<window xmlns="http://www.zkoss.org/2005/zul" xmlns:c="http://www.zkoss.org/2005/zk/client" xmlns:h="http://www.w3.org/1999/xhtml" mode="embedded" width="100%" visible="true" apply="com.hybris.cockpitng.composer.LoginFormComposer">
+	<zscript>
+		String singleSignOnPropertyKey = "cockpitng.login.singlesignon.redirect";
+		String singleSignOnValue = cockpitProperties.getProperty(singleSignOnPropertyKey);
+		String logoUrl = logoService.getLoginPageLogoUrl();
+	</zscript>
+	<div id="loginFormContainer" sclass="login-container top_area" visible="false">
+		<div sclass="login-wrapper">
+			<div sclass="yw-logoContainer" id="logoContainer">
+				<image id="logoImage" sclass="yw-loginpage-logo" src="${empty logoUrl ? './cng/css/images/logo_transparent.png' : logoUrl}"/>
+			</div>
+			<h:form id="loginForm">
+				<div sclass="login_grid" id="loginGrid">
+					<div sclass="wrong_credentials_cnt" visible="${param.login_error==1}">
+						<label id="status" />
+					</div>
+					<div sclass="wrong_credentials_cnt" visible="${param.login_error==2}">
+						<label id="accessdenied" />
+					</div>
+					<vbox id="fieldContainer" sclass="z-grid" spacing="0px">
+						<div id="configuredFieldPanel"/>
+						<hbox sclass="rowCnt">
+							<label sclass="labelRowCnt" id="languageLabel" />
+							<div sclass="compRowCnt localeSelectorContainer" id="loacleListboxContainer">
+								<textbox id="currentLanguageLabel" sclass="currentLanguageLabel" popup="localeListboxPopup, position=after_start" readonly="true" />
+								<button id="localeListboxBtn" sclass="languageSelectorBtn" onClick='localeListboxPopup.open(currentLanguageLabel, "after_start");'></button>
+								<popup id="localeListboxPopup">
+									<listbox id="localeListbox"  sclass="languageList">
+										<custom-attributes ytestid="language" />
+									</listbox>
+								</popup>
+							</div>
+						</hbox>
+						<div sclass="login-footer login-footer_row" style="${empty singleSignOnValue ? 'justify-content: center;' : 'justify-content: space-between;'}">
+							<div if="${not empty cockpitProperties.getProperty('cockpitng.login.singlesignon.redirect')}" sclass="singlesignon_login_cell">
+								<a id="ssoAnchor" label="labels.login.singlesignon.label" href="${cockpitProperties.getProperty('cockpitng.login.singlesignon.redirect')}"/>
+							</div>
+							<button id="loginButton" autodisable="self" sclass="login_btn y-btn-primary" c:onClick="submitForm()"/>
+						</div>
+					</vbox>
+				</div>
+			</h:form>
+		</div>
+	</div>
+
+	<script>
+		<![CDATA[
+			function showBusy() {
+				zAu.cmd0.showBusy();
+			}
+
+			function sendRedirect(targetUrl) {
+				if (window.location.href === targetUrl ||
+						window.location.href.slice(window.location.origin.length) === targetUrl) {
+					window.location.reload();
+				} else {
+					window.location.href = targetUrl;
+				}
+			}
+		]]>
+
+		function submitForm() {
+			showBusy();
+			$("button").attr("disabled", true)
+			const errorCodeHeader = "X-BO-Login-Error-Code";
+			const rootPath = "/backoffice";
+			const loginErrorPath = rootPath + "/login.zul?login_error=";
+			const userName = $("input[name='j_username']").val();
+			const pwd = $("input[name='j_password']").val();
+			$.ajax({
+				url: "j_spring_security_check",
+				type: "POST",
+				contentType: "application/x-www-form-urlencoded",
+				data: {
+					"j_username": userName,
+					"j_password": pwd
+				},
+				dateType: "json",
+				success: function(data, status, xhr) {
+					var targetUrl = xhr.getResponseHeader("location");
+					if (targetUrl) {
+						sendRedirect(encodeURI(targetUrl));
+					} else {
+						const errorCode = xhr.getResponseHeader(errorCodeHeader);
+						if (errorCode != null) {
+							sendRedirect(encodeURI(loginErrorPath + errorCode));
+						} else {
+							sendRedirect(encodeURI(rootPath));
+						}
+					}
+				},
+				error: function() {
+					sendRedirect(loginErrorPath + "1");
+				},
+				complete: function() {
+					$("button").attr("disabled", false);
+				}
+			});
+		}
+
+		$(document).keyup(function(event) {
+			if(event.keyCode == 13){
+				showBusy();
+				submitForm();
+			}
+		});
+		$(document).ready(function(event) {
+			document.body.setAttribute("data-theme", "${themeStyleService.getCurrentThemeId()}");
+		});
+	</script>
+</window>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition id="com.hybris.cockpitng.backoffice.referenceadvancedsearch">
+
+	<name>Reference Search Widget</name>
+	<description>Reference Search Widget</description>
+	<version>1.0</version>
+	<view src="referenceadvancedsearch.zul"/>
+	<controller class="com.hybris.backoffice.widgets.referencesearch.ReferenceAdvancedSearchController"/>
+	<sockets>
+
+		<input id="referenceSearchCtx" type="com.hybris.cockpitng.data.TypeAwareSelectionContext"/>
+		<input id="resetSelection" type="java.lang.Object"/>
+		<input id="selectedItems" type="[T]" multiplicity="List"/>
+		<input id="selectedItem" type="java.lang.Object"/>
+
+		<output id="advancedSearchInitCtx" type="com.hybris.backoffice.widgets.advancedsearch.impl.AdvancedSearchInitContext"/>
+		<output id="selectedReferences" type="java.lang.Object" multiplicity="List"/>
+		<output id="cancel" type="com.hybris.cockpitng.data.TypeAwareSelectionContext"/>
+
+</sockets>
+	<keywords>
+		<keyword>Search</keyword>
+	</keywords>
+</widget-definition>

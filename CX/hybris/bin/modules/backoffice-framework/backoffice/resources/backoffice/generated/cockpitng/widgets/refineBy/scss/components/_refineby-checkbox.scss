@@ -1,0 +1,14 @@
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/cockpitng/cng/scss/cockpitng-globals.scss';
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/backoffice/scss/backoffice-variables.scss';
+
+/*================================
+    Refine By Checkboxes
+================================*/
+@import "../support/_refineby-variables.scss";
+
+.yw-refineby {
+    .z-checkbox {
+        display: block;
+        margin-bottom: $refineby__checkbox--margin-bottom;
+    }
+}

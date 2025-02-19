@@ -1,0 +1,31 @@
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at 13 févr. 2025, 16:27:28                     ---
+ * ----------------------------------------------------------------
+ *  
+ * Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved.
+ */
+package de.hybris.platform.b2bacceleratoraddon.constants;
+
+/**
+ * @deprecated since ages - use constants in Model classes instead
+ */
+@Deprecated(since = "ages", forRemoval = false)
+@SuppressWarnings({"unused","cast"})
+public class GeneratedB2bacceleratoraddonConstants
+{
+	public static final String EXTENSIONNAME = "b2bacceleratoraddon";
+	public static class TC
+	{
+		public static final String APPROVEORDERACTION = "ApproveOrderAction".intern();
+		public static final String REORDERACTION = "ReorderAction".intern();
+	}
+	
+	protected GeneratedB2bacceleratoraddonConstants()
+	{
+		// private constructor
+	}
+	
+	
+}

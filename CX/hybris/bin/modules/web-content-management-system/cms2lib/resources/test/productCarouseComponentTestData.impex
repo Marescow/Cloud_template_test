@@ -1,0 +1,25 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+
+$contentCatalog=sampleContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+$productCatalog=sampleProductCatalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+INSERT_UPDATE Catalog;id[unique=true];name
+                     ;sampleProductCatalog;Sample Product Catalog
+                     ;sampleContentCatalog;Sample Content Catalog
+
+INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];active
+                            ;sampleProductCatalog;Staged;true
+                            ;sampleContentCatalog;Staged;true
+
+INSERT_UPDATE Product;code[unique=true];$productCV[unique=true];name;approvalStatus(code)
+                     ;productAA;;Sample product A;approved
+                     ;productBB;;Sample product B;approved
+                     ;productCC;;Sample product C;approved
+
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV)
+                                      ;;productCarouselAA;Best Selling Products;productAA,productBB,productCC

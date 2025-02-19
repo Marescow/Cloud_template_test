@@ -1,0 +1,12 @@
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/cockpitng/cng/scss/cockpitng-globals.scss';
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/backoffice/scss/backoffice-variables.scss';
+
+
+
+@import "../scss/components/_promotionenginebackoffice_messages.scss";
+@import "../scss/components/_promotionenginebackoffice_tab.scss";
+@import "../scss/components/_promotionenginebackoffice_tab-grid.scss";
+.yzul-promo-background {
+	background: var(--bo-container-background);
+}
+

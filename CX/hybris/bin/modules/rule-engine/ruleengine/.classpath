@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/platform"/>
+	<classpathentry exported="true" kind="lib" path="resources"/>
+	<classpathentry kind="src" output="eclipsebin/classes" path="testsrc"/>
+	<classpathentry exported="true" kind="lib" path="bin/ruleengineserver.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/antlr-runtime-3.5.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-base-8.44.0-SAP-PATCH-1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-commands-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-compiler-8.44.0-SAP-PATCH-1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-core-8.44.0-SAP-PATCH-1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-drl-ast-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-drl-parser-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-io-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-kiesession-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-mvel-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-util-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-wiring-api-8.44.0-SAP-PATCH-1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-wiring-dynamic-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/drools-xml-support-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/kie-api-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/kie-internal-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/kie-memory-compiler-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/kie-util-maven-support-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/kie-util-xml-8.44.0.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/mvel2-2.5.0.Final.jar"/>
+	<classpathentry kind="output" path="eclipsebin/notused"/>
+</classpath>

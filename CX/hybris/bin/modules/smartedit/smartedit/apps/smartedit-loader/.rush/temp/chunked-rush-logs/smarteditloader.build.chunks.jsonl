@@ -1,0 +1,14 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for smarteditloader\n"}
+{"kind":"O","text":"Configuration read smarteditloader\n"}
+{"kind":"O","text":"Loading plugins smarteditloader\n"}
+{"kind":"O","text":"Generating bundle smarteditloader\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(4): src/legacySmarteditloader.ts\n"}
+{"kind":"O","text":"(4): \u0000tslib.js\n"}
+{"kind":"O","text":"(4): src/smarteditloader.ts\n"}
+{"kind":"O","text":"(5): styling/sass/styling.scss\n"}
+{"kind":"O","text":"(5): src/SmarteditloaderComponent.ts\n"}
+{"kind":"O","text":"Bundle created smarteditloader\n"}
+{"kind":"O","text":"- Generated 6 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

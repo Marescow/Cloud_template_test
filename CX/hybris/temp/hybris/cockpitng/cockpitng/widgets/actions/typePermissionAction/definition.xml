@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<action-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   id="com.hybris.cockpitng.action.typepermission"
+                   xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/action-definition.xsd">
+    <name>Type Permission Action</name>
+    <description>Action launching type permission management controls.</description>
+    <author>hybris</author>
+    <version>1.0</version>
+    <actionClassName>com.hybris.cockpitng.actions.typepermission.TypePermissionAction</actionClassName>
+
+    <sockets>
+        <output id="currentType" type="java.lang.Object"/>
+    </sockets>
+
+    <iconUri>permission</iconUri>
+
+</action-definition>

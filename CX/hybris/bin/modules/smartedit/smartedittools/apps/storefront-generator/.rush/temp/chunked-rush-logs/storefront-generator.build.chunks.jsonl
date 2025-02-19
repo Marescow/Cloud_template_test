@@ -1,0 +1,20 @@
+{"kind":"O","text":"Invoking: cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config=webpack.config.js \n"}
+{"kind":"O","text":"Hash: 05c3d66bdbc3dfbc5992\n"}
+{"kind":"O","text":"Version: webpack 4.44.1\n"}
+{"kind":"O","text":"Time: 30884ms\n"}
+{"kind":"O","text":"Built at: 13/02/2025 14:47:17\n"}
+{"kind":"O","text":"                  Asset      Size            Chunks                   Chunk Names\n"}
+{"kind":"O","text":"                main.js    40 KiB              main  [emitted]        main\n"}
+{"kind":"O","text":"            main.js.map  33.2 KiB              main  [emitted] [dev]  main\n"}
+{"kind":"O","text":"             runtime.js  6.15 KiB           runtime  [emitted]        runtime\n"}
+{"kind":"O","text":"         runtime.js.map  6.13 KiB           runtime  [emitted] [dev]  runtime\n"}
+{"kind":"O","text":"    storefrontvendor.js  5.13 MiB  storefrontvendor  [emitted]        storefrontvendor\n"}
+{"kind":"O","text":"storefrontvendor.js.map  4.83 MiB  storefrontvendor  [emitted] [dev]  storefrontvendor\n"}
+{"kind":"O","text":"Entrypoint main = runtime.js runtime.js.map storefrontvendor.js storefrontvendor.js.map main.js main.js.map\n"}
+{"kind":"O","text":"[../../common/temp/node_modules/.pnpm/webpack@4.44.1_webpack-cli@3.3.12/node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {main} [built]\n"}
+{"kind":"O","text":"[./src lazy recursive] ./src lazy namespace object 160 bytes {main} [built]\n"}
+{"kind":"O","text":"[./src/AppComponent.ts] 576 bytes {main} [built]\n"}
+{"kind":"O","text":"[./src/Page1Component.ts] 1.2 KiB {main} [built]\n"}
+{"kind":"O","text":"[./src/Page2Component.ts] 1.2 KiB {main} [built]\n"}
+{"kind":"O","text":"[./src/index.ts] 1.4 KiB {main} [built]\n"}
+{"kind":"O","text":"    + 753 hidden modules\n"}

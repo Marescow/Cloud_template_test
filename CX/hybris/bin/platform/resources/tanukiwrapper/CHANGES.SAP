@@ -1,0 +1,50 @@
+This is a SAP Commerce version of Java Service Wrapper from Tanuki Wrapper.
+
+This version originates from wrapper-delta-pack-3.5.57-pro.zip  artifact taken from https://download.tanukisoftware.com/wrapper/3.5.57/.
+
+SHA256 of the original file:
+96ecf03eadd5291157a4d70db22f79dd0606a3ef3bde6d3245883859997874a7 *wrapper-delta-pack-3.5.57-pro.zip
+
+CHANGES:
+* Removed:
+	* bin/demoapp
+	* bin/DemoApp.bat
+	* bin/InstallTestWrapper-NT.bat
+	* bin/PauseTestWrapper-NT.bat
+	* bin/QueryTestWrapper-NT.bat
+	* bin/README.txt
+	* bin/ResumeTestWrapper-NT.bat
+	* bin/SetupTestWrapper.bat
+	* bin/StartTestWrapper-NT.bat
+	* bin/StopTestWrapper-NT.bat
+	* bin/TeardownTestWrapper.bat
+	* bin/testwrapper
+	* bin/TestWrapper.bat
+	* bin/TestWrapperCommand.bat
+	* bin/UninstallTestWrapper-NT.bat
+	* conf/*.conf
+	* doc/
+	* lang/
+	* lib/wrapperdemo.jar
+	* lib/wrappertest.jar
+	* src/
+	* README_*.txt
+* Added:
+	* bin/catalina.bat
+	* bin/catalina.sh
+	* bin/debug.bat
+	* bin/debug.sh
+	* bin/InstallTomcatService.bat
+	* bin/jdk_logging.properties
+	* bin/o.bat
+	* bin/o.sh
+	* bin/UninstallTomcatService.bat
+	* bin/wrapper.bat
+	* bin/wrapper.sh
+	* conf/hybris-wrapper-license.conf
+	* conf/i3-log.conf
+	* conf/README.txt
+	* lib/keystore
+	* lib/wrapper-version.txt
+	* logs/WHERE_ARE_LOGS.txt
+	* CHANGES.SAP (this file)

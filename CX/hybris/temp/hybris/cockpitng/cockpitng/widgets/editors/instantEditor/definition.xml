@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<editor-definition id="com.hybris.cockpitng.editor.instanteditor"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/editor-definition.xsd">
+
+    <name>Instant Editor</name>
+    <description>An editor wrapper which displays its value as a label and switches to underlying nested editor view on click
+    </description>
+    <author>hybris</author>
+    <version>1.0</version>
+
+    <type>java.lang.Object</type>
+    <editorClassName>com.hybris.cockpitng.editor.instant.InstantEditorRenderer</editorClassName>
+    <handlesLocalization>true</handlesLocalization>
+</editor-definition>

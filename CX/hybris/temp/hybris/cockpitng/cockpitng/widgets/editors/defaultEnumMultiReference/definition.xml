@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<editor-definition id="com.hybris.cockpitng.editor.enummultireferenceeditor"
+						 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/editor-definition.xsd">
+
+	<name>Default Enum Multi Reference Editor</name>
+	<description>Default Enumeration Multi Reference Editor</description>
+	<author>hybris</author>
+	<version>1.0</version>
+
+	<type>^EnumMultiReference-(COLLECTION|LIST|SET)\((.*)\)$</type>
+	<editorClassName>com.hybris.cockpitng.editor.enummultireferenceeditor.DefaultEnumMultiReferenceEditor</editorClassName>
+
+	<sockets>
+		<input id="referenceEditorInput"/>
+		<output id="referenceEditorOutput" type="java.util.Map"/>
+		<output id="referenceSelected" type="com.hybris.cockpitng.data.TypeAwareSelectionContext"/>
+	</sockets>
+
+	<settings>
+		<setting key="pageSize" default-value="5" type="java.lang.Integer"/>
+	</settings>
+</editor-definition>

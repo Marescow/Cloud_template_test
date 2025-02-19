@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:yc="http://www.hybris.com/cockpitng/config/common"
+               xmlns="http://www.hybris.com/cockpitng/component/valuechooser"
+               targetNamespace="http://www.hybris.com/cockpitng/component/valuechooser"
+               elementFormDefault="qualified">
+
+    <xs:import namespace="http://www.hybris.com/cockpitng/config/common"
+               schemaLocation="classpath://schemas/config/hybris/common-config.xsd"/>
+
+    <xs:element name="value-chooser">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="option" type="option" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="parameter">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="option">
+        <xs:complexContent>
+            <xs:extension base="yc:positioned">
+                <xs:sequence>
+                    <xs:element name="value" type="value" maxOccurs="unbounded" />
+                </xs:sequence>
+                <xs:attribute name="id" type="xs:string" use="required"/>
+                <xs:attribute name="label" type="xs:string" use="required"/>
+                <xs:attribute name="selected" type="xs:boolean" default="false"/>
+                <xs:attribute name="merge-mode" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="value">
+        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="expression" type="xs:string" use="required"/>
+        <xs:attribute name="type" type="xs:string" default="java.lang.String"/>
+        <xs:attribute name="bean-factory" type="xs:string"/>
+        <xs:attribute name="factory-method" type="xs:string"/>
+        <xs:attribute name="merge-mode" type="xs:string"/>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,33 @@
+import { AfterViewInit, OnDestroy } from '@angular/core';
+import { TypedMap } from '@smart/utils';
+import { SettingsService } from 'smarteditcommons/services';
+import { GenericEditorWidgetData } from '../../../genericEditor/types';
+import { GenericEditorSanitizationService } from './services/GenericEditorSanitizationService';
+import { RichTextFieldLocalizationService } from './services/RichTextFieldLocalizationService';
+import { RichTextLoaderService } from './services/RichTextLoaderService';
+export declare class RichTextFieldComponent implements AfterViewInit, OnDestroy {
+    widget: GenericEditorWidgetData<any>;
+    private seRichTextLoaderService;
+    private seRichTextConfiguration;
+    private genericEditorSanitizationService;
+    private seRichTextFieldLocalizationService;
+    private settingsService;
+    private textarea;
+    readonly LICENSE_KEY = "TVdvME0wNUZWMVF6YkVsT01uaDVhM2MzYzNSeU9YSnUtTnpVNU9UTXpOVGM0T1RNMk5qYzI=";
+    private editorInstance;
+    private readonly saveBtnId;
+    private readonly events;
+    private saveBtn;
+    constructor(widget: GenericEditorWidgetData<any>, seRichTextLoaderService: RichTextLoaderService, seRichTextConfiguration: TypedMap<any>, genericEditorSanitizationService: GenericEditorSanitizationService, seRichTextFieldLocalizationService: RichTextFieldLocalizationService, settingsService: SettingsService);
+    ngAfterViewInit(): Promise<void>;
+    ngOnDestroy(): void;
+    addMultipleEventListeners(element: HTMLElement): void;
+    bindSaveEvent(): void;
+    onChange(): void;
+    onMode(): void;
+    onInstanceReady(ev: any): void;
+    requiresUserCheck(): boolean;
+    reassignUserCheck(): void;
+    checkboxOnClick(event: HTMLInputElement): void;
+    private toggleSubmitButton;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="eclipsebin/notused"/>
+	<!-- old libraries -->
+				
+				
+	<classpathentry exported="true" kind="lib" path="lib/azure-core-1.49.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-core-http-netty-1.15.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-json-1.1.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-keyvault-core-1.2.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-storage-8.1.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-storage-blob-12.26.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-storage-common-12.25.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-storage-file-share-12.22.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-storage-internal-avro-12.11.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-storage-queue-12.21.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/azure-xml-1.0.0.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/jackson-dataformat-xml-2.16.1.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/jackson-datatype-jsr310-2.16.1.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-codec-dns-4.1.108.Final.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-codec-http2-4.1.108.Final.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-resolver-dns-4.1.108.Final.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-resolver-dns-classes-macos-4.1.108.Final.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-resolver-dns-native-macos-4.1.108.Final-osx-x86_64.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-tcnative-boringssl-static-2.0.65.Final.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-tcnative-classes-2.0.65.Final.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-classes-epoll-4.1.108.Final.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-classes-kqueue-4.1.108.Final.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-native-epoll-4.1.108.Final-linux-x86_64.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/netty-transport-native-kqueue-4.1.108.Final-osx-x86_64.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/reactor-netty-core-1.0.43.jar" />
+	<classpathentry exported="true" kind="lib" path="lib/reactor-netty-http-1.0.43.jar" />
+	<classpathentry exported="true" kind="lib" path="bin/azurecloudserver.jar" />
+	<classpathentry exported="true" kind="lib" path="resources" />
+	<classpathentry exported="true" output="eclipsebin/classes" kind="src" path="testsrc" />
+	<classpathentry exported="false" kind="src" path="/platform" />
+				
+</classpath>
+				

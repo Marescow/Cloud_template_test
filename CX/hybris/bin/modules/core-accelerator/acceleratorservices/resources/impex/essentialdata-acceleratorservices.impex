@@ -1,0 +1,13 @@
+# ---------------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# ---------------------------------------------------------------------------
+
+INSERT_UPDATE ServicelayerJob; code[unique = true]    ; springId
+                             ; emailAddressCleanUpJob ; emailAddressCleanUpJob
+
+INSERT_UPDATE CronJob; code[unique = true]        ; job(code)              ; singleExecutable; sessionLanguage(isocode)
+                     ; emailAddressCleanUpCronJob ; emailAddressCleanUpJob ; false           ; en
+
+# Run the EmptyEmailMessageCronJob every 2 days
+INSERT_UPDATE Trigger; cronJob(code)[unique = true]; second[default = 0]; minute[default = 5]; hour[default = 3]; day[default = -1]; month[default = -1]; year[default = -1]; relative[default = false]; active[default = false]; maxAcceptableDelay[default = -1]
+                     ; emailAddressCleanUpCronJob  ; -1                 ; -1                 ; 48               ; -1               ;                    ;                   ; true                     ; true                   ;

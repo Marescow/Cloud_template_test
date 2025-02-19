@@ -1,0 +1,15 @@
+<window title="${labels.app.unexpectedError.popup.title}" sclass="z-messagebox-window"
+        width="480px" border="normal" mode="modal" closable="true">
+    <hbox style="margin: 8px 16px;">
+    	<div sclass="z-messagebox">
+    		<div>
+                <div class="z-messagebox-error z-div" style="float:left;width:32px;height:32px; margin-bottom:10px"/>
+                <div style="margin:8px; float: right;">${labels.app.unexpectedError.popup.message}</div>
+            </div>
+    	</div>
+    </hbox>
+    <separator bar="true"/>
+    <div sclass="z-messagebox-window-footer">
+    	<button label="OK" onClick="spaceOwner.detach()"/>
+    </div>
+</window>

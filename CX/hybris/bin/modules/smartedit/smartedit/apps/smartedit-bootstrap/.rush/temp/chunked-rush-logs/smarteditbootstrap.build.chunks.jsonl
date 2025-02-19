@@ -1,0 +1,10 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for smarteditbootstrap\n"}
+{"kind":"O","text":"Configuration read smarteditbootstrap\n"}
+{"kind":"O","text":"Loading plugins smarteditbootstrap\n"}
+{"kind":"O","text":"Generating bundle smarteditbootstrap\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(2): src/BootstrapService.ts\n"}
+{"kind":"O","text":"Bundle created smarteditbootstrap\n"}
+{"kind":"O","text":"- Generated 4 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

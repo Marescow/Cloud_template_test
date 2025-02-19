@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<action-definition id="com.hybris.cockpitng.action.searchbytype"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/action-definition.xsd">
+    <name>Search by type</name>
+    <description>Allows triggering search</description>
+    <author>hybris</author>
+    <version>0.1</version>
+
+    <actionClassName>com.hybris.cockpitng.actions.search.SearchByTypeAction</actionClassName>
+
+    <iconUri>inspection</iconUri>
+
+    <sockets>
+        <output id="type" type="java.lang.String"/>
+    </sockets>
+
+</action-definition>

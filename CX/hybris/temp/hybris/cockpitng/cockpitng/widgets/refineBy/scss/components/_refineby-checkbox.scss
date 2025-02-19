@@ -1,0 +1,11 @@
+/*================================
+    Refine By Checkboxes
+================================*/
+@import "../support/_refineby-variables.scss";
+
+.yw-refineby {
+    .z-checkbox {
+        display: block;
+        margin-bottom: $refineby__checkbox--margin-bottom;
+    }
+}

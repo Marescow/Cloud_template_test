@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<editor-definition id="com.hybris.cockpitng.editor.defaultfileupload"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/editor-definition.xsd">
+
+	<name>Default File Upload Editor</name>
+	<description>Default File Upload Editor</description>
+	<author>hybris</author>
+	<version>0.1</version>
+
+	<type>com.hybris.cockpitng.editor.defaultfileupload.FileUploadResult</type>
+	<editorClassName>com.hybris.cockpitng.editor.defaultfileupload.DefaultFileUploadEditor</editorClassName>
+</editor-definition>

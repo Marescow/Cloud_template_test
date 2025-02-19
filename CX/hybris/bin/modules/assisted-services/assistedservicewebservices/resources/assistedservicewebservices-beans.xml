@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ [y] hybris Platform
+
+ Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
+
+ This software is the confidential and proprietary information of SAP
+ ("Confidential Information"). You shall not disclose such Confidential
+ Information and shall use it only in accordance with the terms of the
+ license agreement you entered into with SAP.
+-->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+    <bean class="de.hybris.platform.assistedservicewebservices.dto.CustomerSearchPageWsDTO">
+        <property name="sorts" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.search.pagedata.SortWsDTO>"/>
+        <property name="pagination" type="de.hybris.platform.commercewebservicescommons.dto.search.pagedata.PaginationWsDTO"/>
+        <property name="entries" type="java.util.List&lt;de.hybris.platform.commercewebservicescommons.dto.user.UserWsDTO>"/>
+    </bean>
+    
+    <bean class="de.hybris.platform.assistedservicewebservices.dto.CustomerListWsDTO">
+        <property name="uid" type="java.lang.String"/>
+        <property name="name" type="java.lang.String"/>
+		<property name="additionalColumnsKeys" type="java.util.List&lt;java.lang.String>"/>
+		<property name="searchBoxEnabled" type="boolean"/>
+	</bean>
+
+    <bean class="de.hybris.platform.assistedservicewebservices.dto.CustomerSuggestionsResponseWsDTO">
+        <description>Represents an autocomplete suggestion list of customers.</description>
+        <hints>
+            <hint name="wsRelated"/>
+            <hint name="alias">CustomerSuggestionsResponse</hint>
+        </hints>
+        <property name="suggestions" type="java.util.List&lt;de.hybris.platform.assistedservicewebservices.dto.CustomerSuggestionWsDto>"/>
+    </bean>
+
+    <bean class="de.hybris.platform.assistedservicewebservices.dto.CustomerSuggestionWsDto" >
+        <property name="email" type="String" />
+        <property name="fullName" type="String" />
+        <property name="date" type="String" />
+        <property name="card" type="String" />
+        <property name="carts" type="java.util.List&lt;String&gt;" />
+    </bean>
+
+    <bean class="de.hybris.platform.assistedservicewebservices.dto.CustomerSearchInputWsDTO">
+        <description>Customer search query.</description>
+        <hints>
+            <hint name="wsRelated"/>
+            <hint name="alias">CustomerSearchInput</hint>
+        </hints>
+        <property name="query" type="java.lang.String">
+            <description>Parts of a customer email or name.</description>
+            <hints>
+                <hint name="example">johndoe@example.com</hint>
+                <hint name="required">false</hint>
+            </hints>
+        </property>
+        <property name="orderId" type="java.lang.String">
+            <description>ID of the order.</description>
+            <hints>
+                <hint name="example">00000001</hint>
+                <hint name="required">false</hint>
+            </hints>
+        </property>
+        <property name="customerListId" type="java.lang.String">
+            <description>ID of the customer list.</description>
+            <hints>
+                <hint name="example">customerList1</hint>
+                <hint name="required">false</hint>
+            </hints>
+        </property>
+    </bean>
+
+    <bean class="de.hybris.platform.assistedservicewebservices.dto.CustomerSuggestionsInputWsDTO">
+        <description>Customer suggestions query.</description>
+        <hints>
+            <hint name="wsRelated"/>
+            <hint name="alias">CustomerSuggestionsInputWsDTO</hint>
+        </hints>
+        <property name="customerQuery" type="java.lang.String">
+            <description>The first characters of customer email or part of name. A BadRequestException is thrown when the query is too short. Minimum query length can be updated via `assistedserviceswebservices.customer.suggestions.minimum.query.length` property.</description>
+            <hints>
+                <hint name="example">john.doe</hint>
+                <hint name="required">true</hint>
+            </hints>
+        </property>
+    </bean>
+</beans>

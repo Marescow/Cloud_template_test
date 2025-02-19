@@ -1,0 +1,31 @@
+2025-02-14T09:11:00,255 INFO  properties - newSecurityManager: setting entity expansion limit to: 0
+2025-02-14T09:11:01,177 INFO  properties - newSecurityManager: setting entity expansion limit to: 0
+2025-02-14T09:11:01,798 INFO  ProcessorService - Context listener - Context initialized.
+2025-02-14T09:11:01,818 INFO  form-runner-auth - initializing
+2025-02-14T09:11:01,819 INFO  form-runner-auth - configuring: FilterSettings(None)
+2025-02-14T09:11:01,901 INFO  limiter - initializing
+2025-02-14T09:11:01,902 INFO  limiter - configuring: FilterSettings(java.util.concurrent.Semaphore@86b1078[Permits = 4],(/fr/.*)|(/xforms-server),(?!/([^/]+)/service/).+\.(gif|css|pdf|json|js|coffee|map|png|jpg|xsd|htc|ico|swf|html|htm|txt))
+2025-02-14T11:57:56,691 INFO  form-runner-auth - destroying
+2025-02-14T11:57:56,697 INFO  limiter - destroying
+2025-02-14T11:57:57,119 INFO  ProcessorService - Context listener - Context destroyed.
+2025-02-14T12:05:07,388 INFO  properties - newSecurityManager: setting entity expansion limit to: 0
+2025-02-14T12:05:08,351 INFO  properties - newSecurityManager: setting entity expansion limit to: 0
+2025-02-14T12:05:09,269 INFO  ProcessorService - Context listener - Context initialized.
+2025-02-14T12:05:09,310 INFO  form-runner-auth - initializing
+2025-02-14T12:05:09,312 INFO  form-runner-auth - configuring: FilterSettings(None)
+2025-02-14T12:05:09,442 INFO  limiter - initializing
+2025-02-14T12:05:09,443 INFO  limiter - configuring: FilterSettings(java.util.concurrent.Semaphore@1fbcb2e1[Permits = 4],(/fr/.*)|(/xforms-server),(?!/([^/]+)/service/).+\.(gif|css|pdf|json|js|coffee|map|png|jpg|xsd|htc|ico|swf|html|htm|txt))
+2025-02-14T12:21:27,387 INFO  properties - newSecurityManager: setting entity expansion limit to: 0
+2025-02-14T12:21:28,135 INFO  properties - newSecurityManager: setting entity expansion limit to: 0
+2025-02-14T12:21:28,833 INFO  ProcessorService - Context listener - Context initialized.
+2025-02-14T12:21:28,855 INFO  form-runner-auth - initializing
+2025-02-14T12:21:28,856 INFO  form-runner-auth - configuring: FilterSettings(None)
+2025-02-14T12:21:28,941 INFO  limiter - initializing
+2025-02-14T12:21:28,942 INFO  limiter - configuring: FilterSettings(java.util.concurrent.Semaphore@43c27154[Permits = 4],(/fr/.*)|(/xforms-server),(?!/([^/]+)/service/).+\.(gif|css|pdf|json|js|coffee|map|png|jpg|xsd|htc|ico|swf|html|htm|txt))
+2025-02-14T15:26:15,724 INFO  properties - newSecurityManager: setting entity expansion limit to: 0
+2025-02-14T15:26:16,513 INFO  properties - newSecurityManager: setting entity expansion limit to: 0
+2025-02-14T15:26:17,315 INFO  ProcessorService - Context listener - Context initialized.
+2025-02-14T15:26:17,344 INFO  form-runner-auth - initializing
+2025-02-14T15:26:17,346 INFO  form-runner-auth - configuring: FilterSettings(None)
+2025-02-14T15:26:17,438 INFO  limiter - initializing
+2025-02-14T15:26:17,439 INFO  limiter - configuring: FilterSettings(java.util.concurrent.Semaphore@1cca48b5[Permits = 4],(/fr/.*)|(/xforms-server),(?!/([^/]+)/service/).+\.(gif|css|pdf|json|js|coffee|map|png|jpg|xsd|htc|ico|swf|html|htm|txt))

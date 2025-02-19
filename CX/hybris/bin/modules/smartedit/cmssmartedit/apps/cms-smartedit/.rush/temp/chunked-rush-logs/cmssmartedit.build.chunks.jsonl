@@ -1,0 +1,63 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for cmssmartedit\n"}
+{"kind":"O","text":"Configuration read cmssmartedit\n"}
+{"kind":"O","text":"Loading plugins cmssmartedit\n"}
+{"kind":"O","text":"Generating bundle cmssmartedit\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(4): src/cmssmartedit.ts\n"}
+{"kind":"O","text":"(5): \u0000tslib.js\n"}
+{"kind":"O","text":"(5): src/services/index.ts\n"}
+{"kind":"O","text":"(25): styling/sass/styling.scss\n"}
+{"kind":"O","text":"(25): src/components/index.ts\n"}
+{"kind":"O","text":"(31): src/services/HiddenComponentMenuService.ts\n"}
+{"kind":"O","text":"(31): src/services/SlotContainerService.ts\n"}
+{"kind":"O","text":"(31): src/services/ComponentSharedServiceInner.ts\n"}
+{"kind":"O","text":"(31): src/services/ComponentVisibilityAlertServiceInner.ts\n"}
+{"kind":"O","text":"(31): src/services/SlotRestrictionsServiceInner.ts\n"}
+{"kind":"O","text":"(31): src/services/EditorEnablerServiceInner.ts\n"}
+{"kind":"O","text":"(31): src/services/dragAndDrop/index.ts\n"}
+{"kind":"O","text":"(33): src/services/ComponentInfoService.ts\n"}
+{"kind":"O","text":"(33): src/services/ContextAwareEditableItemServiceInner.ts\n"}
+{"kind":"O","text":"(33): src/services/ContextualMenuDropdownService.ts\n"}
+{"kind":"O","text":"(33): src/services/RemoveComponentServiceInner.ts\n"}
+{"kind":"O","text":"(33): src/services/EditorModalServiceInner.ts\n"}
+{"kind":"O","text":"(33): src/services/SlotSynchronizationService.ts\n"}
+{"kind":"O","text":"(33): src/services/SlotUnsharedService.ts\n"}
+{"kind":"O","text":"(33): src/services/SlotVisibilityServiceInner.ts\n"}
+{"kind":"O","text":"(33): src/services/SyncPollingServiceInner.ts\n"}
+{"kind":"O","text":"(33): src/services/PageContentSlotsComponentsRestServiceInner.ts\n"}
+{"kind":"O","text":"(33): src/services/PageServiceInner.ts\n"}
+{"kind":"O","text":"(33): src/services/OpenNodeInPageTreeService.ts\n"}
+{"kind":"O","text":"(33): src/services/ComponentMenuConditionAndCallbackServiceInner.ts\n"}
+{"kind":"O","text":"(33): src/components/externalComponent/index.ts\n"}
+{"kind":"O","text":"(34): src/components/slotShared/index.ts\n"}
+{"kind":"O","text":"(35): src/components/synchronize/index.ts\n"}
+{"kind":"O","text":"(38): src/components/slotUnshared/index.ts\n"}
+{"kind":"O","text":"(39): src/components/slotVisibility/index.ts\n"}
+{"kind":"O","text":"(42): src/services/dragAndDrop/CmsDragAndDropServiceInner.ts\n"}
+{"kind":"O","text":"(42): src/components/CmsComponentsModule.ts\n"}
+{"kind":"O","text":"(44): src/services/dragAndDrop/ComponentEditingFacade.ts\n"}
+{"kind":"O","text":"(44): SE-LEGACY-JAVASCRIPT\n"}
+{"kind":"O","text":"(44): src/components/externalComponent/externalComponentDecorator/index.ts\n"}
+{"kind":"O","text":"(45): src/components/slotShared/SlotSharedButtonComponent.ts\n"}
+{"kind":"O","text":"(45): src/components/synchronize/SlotSyncButtonComponent.ts\n"}
+{"kind":"O","text":"(45): src/components/synchronize/SlotSynchronizationPanelWrapperComponent.ts\n"}
+{"kind":"O","text":"(45): src/components/synchronize/SyncIndicatorDecorator.ts\n"}
+{"kind":"O","text":"(45): src/components/slotUnshared/SlotUnsharedButtonComponent.ts\n"}
+{"kind":"O","text":"(45): src/components/slotVisibility/hiddenComponentMenu/index.ts\n"}
+{"kind":"O","text":"(46): src/components/slotVisibility/slotVisibility/index.ts\n"}
+{"kind":"O","text":"(47): src/components/slotVisibility/slotVisibilityButton/index.ts\n"}
+{"kind":"O","text":"(48): src/components/slotSharedDisabled/index.ts\n"}
+{"kind":"O","text":"(51): src/components/contextualSlotDropdown.scss\n"}
+{"kind":"O","text":"(51): src/components/externalComponent/externalComponentDecorator/ExternalComponentDecoratorComponent.ts\n"}
+{"kind":"O","text":"(51): src/components/slotVisibility/hiddenComponentMenu/HiddenComponentMenuComponent.ts\n"}
+{"kind":"O","text":"(51): src/components/slotVisibility/slotVisibility/SlotVisibilityComponent.ts\n"}
+{"kind":"O","text":"(51): src/components/slotVisibility/slotVisibilityButton/SlotVisibilityButtonComponent.ts\n"}
+{"kind":"O","text":"(51): src/components/slotSharedDisabled/externalSlotDisabledDecorator/index.ts\n"}
+{"kind":"O","text":"(52): src/components/slotSharedDisabled/sharedSlotDisabledDecorator/index.ts\n"}
+{"kind":"O","text":"(53): src/components/slotSharedDisabled/SlotDisabledComponent.ts\n"}
+{"kind":"O","text":"(53): src/components/slotSharedDisabled/externalSlotDisabledDecorator/ExternalSlotDisabledDecoratorComponent.ts\n"}
+{"kind":"O","text":"(53): src/components/slotSharedDisabled/sharedSlotDisabledDecorator/SharedSlotDisabledDecoratorComponent.ts\n"}
+{"kind":"O","text":"Bundle created cmssmartedit\n"}
+{"kind":"O","text":"- Generated 54 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

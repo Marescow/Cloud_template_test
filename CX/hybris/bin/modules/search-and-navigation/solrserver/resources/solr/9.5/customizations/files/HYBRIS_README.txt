@@ -1,0 +1,193 @@
+
+hybris Changes
+=============================
+
+This is a modified version of Solr.
+
+The following files/directories were removed:
+- docs
+- example
+
+The following files/directories were added:
+- HYBRIS_README.txt
+- modules/hybris
+- server/solr/security.json.example
+- server/solr/solr.p12
+- server/solr/solr_client.p12
+- server/etc/zookeepercredentials.properties
+
+The following files/directories were modified/replaced:
+- bin/solr.cmd:
+	- workaround for https://issues.apache.org/jira/browse/SOLR-7283 (lines 19-20)
+- bin/solr.in.cmd:
+	- authentication and ssl configuration example (lines 267-290)
+	- remove UseLargePages parameter from GC_TUNE parameters due to problems with running solr within docker container (line 292)
+	- disable java security manager - starting from solr 9.0.0 it is enabled by default (line 294)
+	- disable request logging - starting from solr 9.0.0 it is enabled by default (line 296)
+	- configuration of zookeeper ACL - default settings without ACLs (lines 298-307)
+	- replica placement plugin configuration (lines 309-310)
+	- disable solr.cluster.plugin.edit.enabled flag which is needed for solr.xml replica placement plugin configuration (lines 312-314)
+- bin/solr.in.sh:
+	- authentication and ssl configuration example (lines 306-329)
+	- remove UseLargePages parameter from GC_TUNE parameters due to problems with running solr within docker container (line 331)
+	- disable java security manager - starting from solr 9.0.0 it is enabled by default (line 333)
+	- disable request logging - starting from solr 9.0.0 it is enabled by default (line 335)
+	- configuration of zookeeper ACL - default settings without ACLs (lines 337-348)
+	- default replica placement plugin configuration (lines 350-351)
+	- disable solr.cluster.plugin.edit.enabled flag which needed for solr.xml replica placement plugin configuration (lines 353-355)
+- server/resources/log4j2.xml:
+	- change log level for zookeeper to error following changes done as a part of https://issues.apache.org/jira/browse/SOLR-15968 (68-69)
+- server/scripts/cloud-scripts/zkcli.bat:
+    - configuration of zookeeper ACL - default settings without ACLs (lines 25-36)
+- server/scripts/cloud-scripts/zkcli.sh:
+    - configuration of zookeeper ACL - default settings without ACLs (lines 27-38)
+- server/solr/solr.xml
+- server/solr/configsets
+- janino libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2023-33546)
+    - modules/sql/lib/commons-compiler-3.1.9.jar -> modules/sql/lib/commons-compiler-3.1.10.jar
+    - licenses/commons-compiler-3.1.9.jar.sha1 -> licenses/commons-compiler-3.1.10.jar.sha1
+    - modules/sql/lib/janino-3.1.9.jar -> modules/sql/lib/janino-3.1.10.jar
+    - licenses/janino-3.1.9.jar.sha1 -> licenses/janino-3.1.10.jar.sha1
+- jetty libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2024-22201)
+    - licenses/http2-client-10.0.19.jar.sha1 -> licenses/http2-client-10.0.20.jar.sha1
+    - licenses/http2-common-10.0.19.jar.sha1 -> licenses/http2-common-10.0.20.jar.sha1
+    - licenses/http2-hpack-10.0.19.jar.sha1 -> licenses/http2-hpack-10.0.20.jar.sha1
+    - licenses/http2-http-client-transport-10.0.19.jar.sha1 -> licenses/http2-http-client-transport-10.0.20.jar.sha1
+    - licenses/http2-server-10.0.19.jar.sha1 -> licenses/http2-server-10.0.20.jar.sha1
+    - licenses/jetty-alpn-client-10.0.19.jar.sha1 -> licenses/jetty-alpn-client-10.0.20.jar.sha1
+    - licenses/jetty-alpn-java-client-10.0.19.jar.sha1 -> licenses/jetty-alpn-java-client-10.0.20.jar.sha1
+    - licenses/jetty-alpn-java-server-10.0.19.jar.sha1 -> licenses/jetty-alpn-java-server-10.0.20.jar.sha1
+    - licenses/jetty-alpn-server-10.0.19.jar.sha1 -> licenses/jetty-alpn-server-10.0.20.jar.sha1
+    - licenses/jetty-client-10.0.19.jar.sha1 -> licenses/jetty-client-10.0.20.jar.sha1
+    - licenses/jetty-deploy-10.0.19.jar.sha1 -> licenses/jetty-deploy-10.0.20.jar.sha1
+    - licenses/jetty-http-10.0.19.jar.sha1 -> licenses/jetty-http-10.0.20.jar.sha1
+    - licenses/jetty-io-10.0.19.jar.sha1 -> licenses/jetty-io-10.0.20.jar.sha1
+    - licenses/jetty-jmx-10.0.19.jar.sha1 -> licenses/jetty-jmx-10.0.20.jar.sha1
+    - licenses/jetty-rewrite-10.0.19.jar.sha1 -> licenses/jetty-rewrite-10.0.20.jar.sha1
+    - licenses/jetty-security-10.0.19.jar.sha1 -> licenses/jetty-security-10.0.20.jar.sha1
+    - licenses/jetty-server-10.0.19.jar.sha1 -> licenses/jetty-server-10.0.20.jar.sha1
+    - licenses/jetty-servlet-10.0.19.jar.sha1 -> licenses/jetty-servlet-10.0.20.jar.sha1
+    - licenses/jetty-servlets-10.0.19.jar.sha1 -> licenses/jetty-servlets-10.0.20.jar.sha1
+    - licenses/jetty-start-10.0.19-shaded.jar.sha1 -> licenses/jetty-start-10.0.20-shaded.jar.sha1
+    - licenses/jetty-util-10.0.19.jar.sha1 -> licenses/jetty-util-10.0.20.jar.sha1
+    - licenses/jetty-webapp-10.0.19.jar.sha1 -> licenses/jetty-webapp-10.0.20.jar.sha1
+    - licenses/jetty-xml-10.0.19.jar.sha1 -> licenses/jetty-xml-10.0.20.jar.sha1
+    - server/lib/ext/http2-common-10.0.19.jar -> server/lib/ext/http2-common-10.0.20.jar
+    - server/lib/ext/http2-hpack-10.0.19.jar -> server/lib/ext/http2-hpack-10.0.20.jar
+    - server/lib/ext/jetty-http-10.0.19.jar -> server/lib/ext/jetty-http-10.0.20.jar
+    - server/lib/ext/jetty-io-10.0.19.jar -> server/lib/ext/jetty-io-10.0.20.jar
+    - server/lib/ext/jetty-server-10.0.19.jar -> server/lib/ext/jetty-server-10.0.20.jar
+    - server/lib/ext/jetty-util-10.0.19.jar -> server/lib/ext/jetty-util-10.0.20.jar
+    - server/lib/http2-server-10.0.19.jar -> server/lib/http2-server-10.0.20.jar
+    - server/lib/jetty-alpn-java-server-10.0.19.jar -> server/lib/jetty-alpn-java-server-10.0.20.jar
+    - server/lib/jetty-alpn-server-10.0.19.jar -> server/lib/jetty-alpn-server-10.0.20.jar
+    - server/lib/jetty-deploy-10.0.19.jar -> server/lib/jetty-deploy-10.0.20.jar
+    - server/lib/jetty-jmx-10.0.19.jar -> server/lib/jetty-jmx-10.0.20.jar
+    - server/lib/jetty-rewrite-10.0.19.jar -> server/lib/jetty-rewrite-10.0.20.jar
+    - server/lib/jetty-security-10.0.19.jar -> server/lib/jetty-security-10.0.20.jar
+    - server/lib/jetty-servlet-10.0.19.jar -> server/lib/jetty-servlet-10.0.20.jar
+    - server/lib/jetty-servlets-10.0.19.jar -> server/lib/jetty-servlets-10.0.20.jar
+    - server/lib/jetty-webapp-10.0.19.jar -> server/lib/jetty-webapp-10.0.20.jar
+    - server/lib/jetty-xml-10.0.19.jar -> server/lib/jetty-xml-10.0.20.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/http2-client-10.0.19.jar -> server/solr-webapp/webapp/WEB-INF/lib/http2-client-10.0.20.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/http2-http-client-transport-10.0.19.jar -> server/solr-webapp/webapp/WEB-INF/lib/http2-http-client-transport-10.0.20.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/jetty-alpn-client-10.0.19.jar -> server/solr-webapp/webapp/WEB-INF/lib/jetty-alpn-client-10.0.20.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/jetty-alpn-java-client-10.0.19.jar -> server/solr-webapp/webapp/WEB-INF/lib/jetty-alpn-java-client-10.0.20.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/jetty-client-10.0.19.jar -> server/solr-webapp/webapp/WEB-INF/lib/jetty-client-10.0.20.jar
+    - updated server/start.jar
+- json-path library (due to https://nvd.nist.gov/vuln/detail/CVE-2023-51074)
+    - licenses/json-path-2.8.0.jar.sha1 -> licenses/json-path-2.9.0.jar.sha1
+    - server/solr-webapp/webapp/WEB-INF/lib/json-path-2.8.0.jar -> server/solr-webapp/webapp/WEB-INF/lib/json-path-2.9.0.jar
+- netty libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2024-29025)
+    - licenses/netty-buffer-4.1.104.Final.jar.sha1 -> licenses/netty-buffer-4.1.108.Final.jar.sha1
+    - licenses/netty-codec-4.1.104.Final.jar.sha1 -> licenses/netty-codec-4.1.108.Final.jar.sha1
+    - licenses/netty-codec-http-4.1.104.Final.jar.sha1 -> licenses/netty-codec-http-4.1.108.Final.jar.sha1
+    - licenses/netty-codec-http2-4.1.104.Final.jar.sha1 -> licenses/netty-codec-http2-4.1.108.Final.jar.sha1
+    - licenses/netty-codec-socks-4.1.104.Final.jar.sha1 -> licenses/netty-codec-socks-4.1.108.Final.jar.sha1
+    - licenses/netty-common-4.1.104.Final.jar.sha1 -> licenses/netty-common-4.1.108.Final.jar.sha1
+    - licenses/netty-handler-4.1.104.Final.jar.sha1 -> licenses/netty-handler-4.1.108.Final.jar.sha1
+    - licenses/netty-handler-proxy-4.1.104.Final.jar.sha1 -> licenses/netty-handler-proxy-4.1.108.Final.jar.sha1
+    - licenses/netty-resolver-4.1.104.Final.jar.sha1 -> licenses/netty-resolver-4.1.108.Final.jar.sha1
+    - licenses/netty-transport-4.1.104.Final.jar.sha1 -> licenses/netty-transport-4.1.108.Final.jar.sha1
+    - licenses/netty-transport-classes-epoll-4.1.104.Final.jar.sha1 -> licenses/netty-transport-classes-epoll-4.1.108.Final.jar.sha1
+    - licenses/netty-transport-native-epoll-4.1.104.Final-linux-x86_64.jar.sha1 -> licenses/netty-transport-native-epoll-4.1.108.Final-linux-x86_64.jar.sha1
+    - licenses/netty-transport-native-unix-common-4.1.104.Final.jar.sha1 -> licenses/netty-transport-native-unix-common-4.1.108.Final.jar.sha1
+    - modules/opentelemetry/lib/netty-codec-http-4.1.104.Final.jar -> modules/opentelemetry/lib/netty-codec-http-4.1.108.Final.jar
+    - modules/opentelemetry/lib/netty-codec-http2-4.1.104.Final.jar -> modules/opentelemetry/lib/netty-codec-http2-4.1.108.Final.jar
+    - modules/opentelemetry/lib/netty-codec-socks-4.1.104.Final.jar -> modules/opentelemetry/lib/netty-codec-socks-4.1.108.Final.jar
+    - modules/opentelemetry/lib/netty-handler-proxy-4.1.104.Final.jar -> modules/opentelemetry/lib/netty-handler-proxy-4.1.108.Final.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-buffer-4.1.104.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-buffer-4.1.108.Final.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.104.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.108.Final.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.104.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.108.Final.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.104.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.108.Final.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-resolver-4.1.104.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-resolver-4.1.108.Final.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-transport-4.1.104.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-transport-4.1.108.Final.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-transport-classes-epoll-4.1.104.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-transport-classes-epoll-4.1.108.Final.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.104.Final-linux-x86_64.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.108.Final-linux-x86_64.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.104.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.108.Final.jar
+- okio-jvm library (due to https://nvd.nist.gov/vuln/detail/CVE-2023-3635)
+    - licenses/okio-jvm-3.2.0.jar.sha1 -> licenses/okio-jvm-3.4.0.jar.sha1
+    - modules/jaegertracer-configurator/lib/okio-jvm-3.2.0.jar -> modules/jaegertracer-configurator/lib/okio-jvm-3.4.0.jar
+    - modules/opentelemetry/lib/okio-jvm-3.2.0.jar -> modules/opentelemetry/lib/okio-jvm-3.4.0.jar
+- commons-configuration2 due to (due to https://nvd.nist.gov/vuln/detail/CVE-2024-29133)
+    - licenses/commons-configuration2-2.9.0.jar.sha1 -> licenses/commons-configuration2-2.10.1.jar.sha1
+    - modules/hadoop-auth/lib/commons-configuration2-2.9.0.jar -> modules/hadoop-auth/lib/commons-configuration2-2.10.1.jar
+- commons-compress due to (due to https://nvd.nist.gov/vuln/detail/CVE-2024-25710)
+    - licenses/commons-compress-1.25.0.jar.sha1 -> licenses/commons-compress-1.26.0.jar.sha1
+    - modules/extraction/lib/commons-compress-1.25.0.jar -> modules/extraction/lib/commons-compress-1.26.0.jar
+- zookeeper libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2024-23944 and https://nvd.nist.gov/vuln/detail/CVE-2024-51504)
+    - licenses/zookeeper-3.9.1.jar.sha1 -> licenses/zookeeper-3.9.3.jar.sha1
+    - licenses/zookeeper-3.9.1-tests.jar.sha1 -> licenses/zookeeper-3.9.3-tests.jar.sha1
+    - licenses/zookeeper-jute-3.9.1.jar.sha1 -> licenses/zookeeper-jute-3.9.3.jar.sha1
+    - server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.9.1.jar -> server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.9.3.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/zookeeper-jute-3.9.1.jar -> server/solr-webapp/webapp/WEB-INF/lib/zookeeper-jute-3.9.3.jar
+- hadoop-client-runtime library ( due to https://nvd.nist.gov/vuln/detail/CVE-2023-39410 )
+    - licenses/hadoop-client-runtime-3.3.6.jar.sha1 -> licenses/hadoop-client-runtime-3.4.0.jar.sha1
+    - modules/hdfs/lib/hadoop-client-runtime-3.3.6.jar -> modules/hdfs/lib/hadoop-client-runtime-3.4.0.jar
+- grpc libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2023-44487)
+	- licenses/grpc-alts-1.59.0.jar.sha1 -> licenses/grpc-alts-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-alts-1.59.0.jar -> modules/gcs-repository/lib/grpc-alts-1.63.0.jar
+	- licenses/grpc-api-1.59.0.jar.sha1 -> licenses/grpc-api-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-api-1.59.0.jar -> modules/gcs-repository/lib/grpc-api-1.63.0.jar
+	- modules/opentelemetry/lib/grpc-api-1.59.0.jar -> modules/opentelemetry/lib/grpc-api-1.63.0.jar
+	- licenses/grpc-auth-1.59.0.jar.sha1 -> licenses/grpc-auth-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-auth-1.59.0.jar -> modules/gcs-repository/lib/grpc-auth-1.63.0.jar
+	- licenses/grpc-context-1.59.0.jar.sha1 -> licenses/grpc-context-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-context-1.59.0.jar -> modules/gcs-repository/lib/grpc-context-1.63.0.jar
+	- modules/opentelemetry/lib/grpc-context-1.59.0.jar -> modules/opentelemetry/lib/grpc-context-1.63.0.jar
+	- licenses/grpc-core-1.59.0.jar.sha1 -> licenses/grpc-core-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-core-1.59.0.jar -> modules/gcs-repository/lib/grpc-core-1.63.0.jar
+	- modules/opentelemetry/lib/grpc-core-1.59.0.jar -> modules/opentelemetry/lib/grpc-core-1.63.0.jar
+	- licenses/grpc-googleapis-1.59.0.jar.sha1 -> licenses/grpc-googleapis-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-googleapis-1.59.0.jar -> modules/gcs-repository/lib/grpc-googleapis-1.63.0.jar
+	- licenses/grpc-grpclb-1.59.0.jar.sha1 -> licenses/grpc-grpclb-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-grpclb-1.59.0.jar -> modules/gcs-repository/lib/grpc-grpclb-1.63.0.jar
+	- licenses/grpc-netty-1.59.0.jar.sha1 -> licenses/grpc-netty-1.63.0.jar.sha1
+	- modules/opentelemetry/lib/grpc-netty-1.59.0.jar -> modules/opentelemetry/lib/grpc-netty-1.63.0.jar
+	- licenses/grpc-netty-shaded-1.59.0.jar.sha1 -> licenses/grpc-netty-shaded-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-netty-shaded-1.59.0.jar -> modules/gcs-repository/lib/grpc-netty-shaded-1.63.0.jar
+	- licenses/grpc-protobuf-1.59.0.jar.sha1 -> licenses/grpc-protobuf-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-protobuf-1.59.0.jar -> modules/gcs-repository/lib/grpc-protobuf-1.63.0.jar
+	- modules/opentelemetry/lib/grpc-protobuf-1.59.0.jar -> modules/opentelemetry/lib/grpc-protobuf-1.63.0.jar
+	- licenses/grpc-protobuf-lite-1.59.0.jar.sha1 -> licenses/grpc-protobuf-lite-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-protobuf-lite-1.59.0.jar -> modules/gcs-repository/lib/grpc-protobuf-lite-1.63.0.jar
+	- modules/opentelemetry/lib/grpc-protobuf-lite-1.59.0.jar -> modules/opentelemetry/lib/grpc-protobuf-lite-1.63.0.jar
+	- licenses/grpc-rls-1.59.0.jar.sha1 -> licenses/grpc-rls-1.63.0.jar.sha1
+    - modules/gcs-repository/lib/grpc-rls-1.59.0.jar -> modules/gcs-repository/lib/grpc-rls-1.63.0.jar
+	- licenses/grpc-services-1.59.0.jar.sha1 -> licenses/grpc-services-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-services-1.59.0.jar -> modules/gcs-repository/lib/grpc-services-1.63.0.jar
+	- licenses/grpc-stub-1.59.0.jar.sha1 -> licenses/grpc-stub-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-stub-1.59.0.jar -> modules/gcs-repository/lib/grpc-stub-1.63.0.jar
+	- modules/opentelemetry/lib/grpc-stub-1.59.0.jar -> modules/opentelemetry/lib/grpc-stub-1.63.0.jar
+	- licenses/grpc-xds-1.59.0.jar.sha1 -> licenses/grpc-xds-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-xds-1.59.0.jar -> modules/gcs-repository/lib/grpc-xds-1.63.0.jar
+	- licenses/grpc-util-1.59.0.jar.sha1 -> licenses/grpc-protobuf-lite-1.63.0.jar.sha1
+	- modules/gcs-repository/lib/grpc-util-1.59.0.jar -> modules/gcs-repository/lib/grpc-util-1.63.0.jar
+	- modules/opentelemetry/lib/grpc-util-1.59.0.jar -> modules/opentelemetry/lib/grpc-util-1.63.0.jar
+- protobuf-java libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2024-7254)
+	- licenses/protobuf-java-3.24.0.jar.sha1 -> licenses/protobuf-java-3.25.5.jar.sha1
+	- modules/gcs-repository/lib/protobuf-java-3.24.0.jar -> modules/gcs-repository/lib/protobuf-java-3.25.5.jar
+	- modules/opentelemetry/lib/protobuf-java-3.24.0.jar -> modules/opentelemetry/lib/protobuf-java-3.25.5.jar
+	- modules/sql/lib/protobuf-java-3.24.0.jar -> modules/sql/lib/protobuf-java-3.25.5.jar
+	- licenses/protobuf-java-util-3.23.2.jar.sha1 -> licenses/protobuf-java-util-3.25.5.jar.sha1
+	- modules/gcs-repository/lib/protobuf-java-util-3.23.2.jar -> modules/gcs-repository/lib/protobuf-java-util-3.25.5.jar

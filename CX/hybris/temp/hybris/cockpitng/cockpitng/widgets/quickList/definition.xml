@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd"
+                   id="com.hybris.cockpitng.quicklist">
+    <name>Quick List</name>
+    <description>Quick List Widget displays the list of items in a vertical layout</description>
+    <defaultTitle>Quick List</defaultTitle>
+    <author>hybris</author>
+    <version>0.1</version>
+
+    <sockets>
+        <input id="items" type="java.lang.Object" multiplicity="List" />
+        <input id="selectItem" type="java.lang.Object" />
+        <output id="openItem" type="java.lang.Object" />
+        <output id="itemsRemoved" type="java.lang.Object" multiplicity="List" />
+        <output id="itemsListUpdated" type="org.apache.commons.lang3.tuple.Pair"/>
+
+        <!-- deprecated since 19.05, not used anymore -->
+        <output id="itemsRemovedByClick" type="java.lang.Object" multiplicity="List" />
+    </sockets>
+
+    <controller class="com.hybris.backoffice.widgets.quicklist.QuickListController"/>
+    <keywords>
+        <keyword>List</keyword>
+    </keywords>
+    <settings>
+        <setting key="quickListConfigCtx" default-value="quick-list" type="java.lang.String" />
+        <setting key="quickListRenderer" default-value="quickListItemRenderer" type="java.lang.String" />
+        <setting key="showInfo" default-value="true" type="java.lang.Boolean" />
+    </settings>
+</widget-definition>

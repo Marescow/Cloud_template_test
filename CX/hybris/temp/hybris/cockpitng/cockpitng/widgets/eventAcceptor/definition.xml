@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd" id="com.hybris.cockpitng.eventacceptor">
+	<name>Event Acceptor</name>
+	<author>hybris</author>
+	<version>0.1</version>
+
+	<view src="none"/>
+	<controller class="com.hybris.cockpitng.widgets.controller.EventAcceptorWidgetController"/>
+
+	<sockets>
+		<output id="genericOutput" type="&lt;T&gt;"/>
+	</sockets>
+
+	<settings>
+		<setting key="pollingDelay" type="Integer" default-value="500"/>
+		<setting key="eventName" type="String" default-value="default"/>
+		<setting key="eventScope" type="String" default-value="application"/>
+	</settings>
+
+	<keywords>
+		<keyword>Adapters</keyword>
+	</keywords>
+</widget-definition>

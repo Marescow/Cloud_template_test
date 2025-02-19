@@ -1,0 +1,194 @@
+@import "scss/support/_networkchart-variables.scss";
+
+@mixin _network-chart-toolbar-icon ($icon-name) {
+  content: _getIconGlyphContentValue($icon-name);
+  font-size: $font-size__large;
+  font-family: $font-family__icon;
+  position: absolute;
+  left: $networkchart__toolbar-button-icon-left;
+  top: $networkchart__toolbar-button-icon-top;
+}
+
+.yw-com_hybris_cockpitng_visjs_networkchart
+{
+  height: 100%;
+}
+
+.yw-visjs-chart-container
+{
+  width : 100%;
+  background: $white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: $networkchart__chart-container--height;
+  height: 100%;
+
+  .z-networkchart{
+    width : 100%;
+    height: auto;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+    .vis-network {
+			.vis-manipulation {
+				border-top: $networkchart__toolbar--border-top;
+				border-bottom: $networkchart__toolbar--border-bottom;
+				padding: $networkchart__toolbar--padding;
+				height: auto;
+				background: $networkchart__toolbar--bg-color;
+				box-sizing: border-box;
+
+				.vis-button {
+					border-radius: 0;
+					padding: $networkchart__toolbar-button--padding;
+					float: none;
+					height: auto;
+					color: $networkchart__toolbar-button--color;
+					position: relative;
+					margin-left: 0;
+
+					&:not(.vis-none) {
+						&:hover,
+						&:focus,
+						&:active {
+							box-shadow: none;
+							color: $networkchart__toolbar-button-hover--color;
+						}
+
+						&:before {
+							content: '';
+							background-position: 50%;
+							background-repeat: no-repeat;
+							width: $networkchart__toolbar-button-icon--size;
+							height: $networkchart__toolbar-button-icon--size;
+							position: absolute;
+							top: $networkchart__toolbar-button-icon--top;
+							left: $networkchart__toolbar-button-icon--left;
+							transform: translateY(-50%);
+						}
+					}
+					&.vis-none {
+						.vis-label {
+							margin: 0;
+						}
+					}
+
+					&.vis-connect {
+						color: $networkchart__toolbar-button-icon-default-color;
+						&:before {
+							@include _network-chart-toolbar-icon("chain-link");
+						}
+					}
+					&.vis-add {
+						float: left;
+						color: $networkchart__toolbar-button-icon-default-color;
+						&:before {
+							@include _network-chart-toolbar-icon("add");
+						}
+					}
+					&.vis-edit {
+						color: $networkchart__toolbar-button-icon-default-color;
+						&:before {
+							@include _network-chart-toolbar-icon("edit");
+						}
+					}
+					&.vis-delete {
+						color: $networkchart__toolbar-button-icon-default-color;
+						&:before {
+							@include _network-chart-toolbar-icon("delete");
+						}
+					}
+					&.vis-back {
+						color: $networkchart__toolbar-button-icon-default-color;
+						&:before {
+							@include _network-chart-toolbar-icon("nav-back");
+						}
+					}
+					.vis-label {
+						font-size: $networkchart__toolbar-button-label--font-size;
+						line-height: $networkchart__toolbar-button-label--line-height;
+					}
+				}
+				.vis-separator-line {
+					float: none;
+					height: $networkchart__toolbar-separator--height;
+					margin: $networkchart__toolbar-separator--margin;
+					vertical-align: middle;
+					background: $networkchart__toolbar-separator--bg-color;
+				}
+			}
+
+			.vis-close {
+				background-image: none !important;
+				color: $networkchart__toolbar-button--color;
+
+				&:hover {
+					opacity: 1;
+					color: $networkchart__toolbar-button-hover--color;
+				}
+
+				// replace close image into close button
+				&:before {
+					font-family: $networkchart__toolbar-button-icon-close-font-family;
+					font-size: 16px;
+					content: $networkchart__toolbar-button-icon-close-content;  // close button
+					margin-top: 16px;
+					display: block;
+				}
+			}
+
+			.vis-edit-mode {
+				.vis-button.vis-edit.vis-edit-mode {
+					color: $networkchart__toolbar-edit-button--text-color;
+					background: $networkchart__toolbar-edit-button--bg-color;
+					border-color: $networkchart__toolbar-edit-button--border;
+
+					.vis-label {
+						padding: 0 8px;
+						margin: 0;
+					}
+				}
+			}
+		}
+
+  }
+  .yw-button-container.z-div{
+    padding: $networkchart__toolbar-buttons-container--padding;
+  }
+  .save-button{
+    float: right;
+    margin-left: $networkchart__toolbar-button-save--margin-left;
+  }
+  .refresh-button{
+    border-color: transparent;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 1.33;
+    box-shadow: none;
+	  float: right;
+  }
+
+  .cancel-button {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 1.33;
+  }
+
+  .action-slot{
+    margin-left: auto;
+    margin-right: 15%;
+    display: table;
+  }
+
+}

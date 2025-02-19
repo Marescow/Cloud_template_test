@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<action-definition id="com.hybris.cockpitng.action.splitlayoutchooser"
+						 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/action-definition.xsd">
+	<name>Split Layout Chooser</name>
+	<description>An action responsible for changing layout in extended split layout</description>
+	<author>SAP hybris</author>
+	<version>1.0</version>
+
+	<actionClassName>com.hybris.cockpitng.actions.splitlayoutchooser.SplitLayoutChooserAction</actionClassName>
+	<customRendererClassName>com.hybris.cockpitng.actions.splitlayoutchooser.SplitLayoutChooserActionRenderer</customRendererClassName>
+
+</action-definition>

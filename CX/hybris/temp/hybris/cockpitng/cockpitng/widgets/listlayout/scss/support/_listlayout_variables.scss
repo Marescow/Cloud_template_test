@@ -1,0 +1,11 @@
+@import "cockpitng-globals.scss";
+
+$listlayout__widget-bg-color: var(--bo-base-background);
+$listlayout__list-defaults--padding: $container-spacing-default__base;
+$listlayout__list-container--max-width: 1366px;
+$listlayout__list-container--padding-bottom: $listlayout__list-defaults--padding;
+$listlayout__list-child--margin: $listlayout__list-defaults--padding $listlayout__list-defaults--padding 0; 
+$listlayout__list-child--box-shadow: 0px 2px 5px 1px var(--bo-container-border-color);
+$listlayout__list-defaults--border-width: $boxes--border__thin;
+$listlayout__list-flexible-container--padding-top: $listlayout__list-defaults--padding;
+

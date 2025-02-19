@@ -1,0 +1,13 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for personalizationsearchsmartedit\n"}
+{"kind":"O","text":"Configuration read personalizationsearchsmartedit\n"}
+{"kind":"O","text":"Loading plugins personalizationsearchsmartedit\n"}
+{"kind":"O","text":"Generating bundle personalizationsearchsmartedit\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(2): SE-LEGACY-JAVASCRIPT\n"}
+{"kind":"O","text":"(2): src/personalizationsearchsmartedit.ts\n"}
+{"kind":"O","text":"(3): \u0000tslib.js\n"}
+{"kind":"O","text":"(3): ../styling/style.less\n"}
+{"kind":"O","text":"Bundle created personalizationsearchsmartedit\n"}
+{"kind":"O","text":"- Generated 4 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

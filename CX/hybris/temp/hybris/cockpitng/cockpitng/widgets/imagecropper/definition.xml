@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd"
+						 id="com.hybris.cockpitng.widget.imagecropper">
+
+    <name>Image Cropper</name>
+    <description>Image Cropper</description>
+    <defaultTitle>Image Cropper</defaultTitle>
+    <author>SAP Hybris</author>
+    <version>1.0</version>
+
+    <view src="imagecropper.zul"/>
+    <controller class="com.hybris.backoffice.widgets.imagecropper.ImageCropperController"/>
+
+    <sockets>
+        <input id="showCropper" type="org.zkoss.image.Image"/>
+        <output id="cropFinished" type="java.lang.Object"/>
+        <output id="close" type="java.lang.Object"/>
+	</sockets>
+
+    <keywords>
+        <keyword>Image Cropper</keyword>
+    </keywords>
+</widget-definition>

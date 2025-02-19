@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<editor-definition id="com.hybris.cockpitng.editor.defaultfixedreferenceeditor" extends="com.hybris.cockpitng.editor.defaultreferenceeditor"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/editor-definition.xsd">
+
+	<name>Default Fixed Values Reference Editor</name>
+	<description>Default Fixed Values Reference Editor</description>
+	<author>hybris</author>
+	<version>0.1</version>
+
+	<type>^FixedValuesReference\((.*)\)$</type>
+	<editorClassName>com.hybris.cockpitng.editor.defaultfixedreferenceeditor.DefaultFixedReferenceEditor</editorClassName>
+
+</editor-definition>

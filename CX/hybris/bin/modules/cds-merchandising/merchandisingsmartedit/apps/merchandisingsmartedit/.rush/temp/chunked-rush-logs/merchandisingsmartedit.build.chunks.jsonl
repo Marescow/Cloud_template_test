@@ -1,0 +1,12 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for merchandisingsmartedit\n"}
+{"kind":"O","text":"Configuration read merchandisingsmartedit\n"}
+{"kind":"O","text":"Loading plugins merchandisingsmartedit\n"}
+{"kind":"O","text":"Generating bundle merchandisingsmartedit\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(2): SE-LEGACY-JAVASCRIPT\n"}
+{"kind":"O","text":"(2): src/merchandisingsmartedit.ts\n"}
+{"kind":"O","text":"(2): \u0000tslib.js\n"}
+{"kind":"O","text":"Bundle created merchandisingsmartedit\n"}
+{"kind":"O","text":"- Generated 4 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

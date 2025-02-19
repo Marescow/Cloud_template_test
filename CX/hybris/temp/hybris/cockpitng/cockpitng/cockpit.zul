@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?page title="${cockpitProperties.getProperty('cockpitng.appTitle')}" contentType="text/html;charset=UTF-8" ?>
+<?root-attributes lang="${sessionScope['org.zkoss.web.preferred.locale'].language}" ?>
+<?meta if="${zk.ie > 10}" http-equiv="X-UA-Compatible" content="IE=10" ?>
+<?meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes" ?>
+<?meta name="msapplication-TileColor" content="#ffffff" ?>
+<?meta name="msapplication-TileImage" content='${empty cockpitProperties.getProperty("cockpitng.mainpage.mstile_icon") ? "./cng/images/ms-icon-144x144.png" : cockpitProperties.getProperty("cockpitng.mainpage.mstile_icon")}' ?>
+<?meta name="theme-color" content="#ffffff" ?>
+<?meta name="msapplication-config" content="browserconfig.xml" ?>
+<?link rel="stylesheet" type="text/css" href="./cng/css/vendor/jquery-ui.min.css"?>
+<?link rel="stylesheet" type="text/css" href='${themeStyleService.getCurrentThemeStyle()}'?>
+<?link rel="stylesheet" type="text/css" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.css") ? "./cng/css/cockpit.css" : cockpitProperties.getProperty("cockpitng.mainpage.css")}'?>
+<?link rel="stylesheet" type="text/css" href="./cng/css/${param.mainSlotId}_cngpreload.css"?>
+<?link rel="stylesheet" type="text/css" href="./cng/css/_coc_modules.css"?>
+<?link rel="shortcut icon" type="image/x-icon" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.favicon") ? "./cng/images/favicon.ico" : cockpitProperties.getProperty("cockpitng.mainpage.favicon")}'?>
+<?link rel="icon" type="image/x-icon" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.favicon") ? "./cng/images/favicon.ico" : cockpitProperties.getProperty("cockpitng.mainpage.favicon")}'?>
+<?link rel="apple-touch-icon" sizes="180x180" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.apple_touch_icon") ? "./cng/images/apple_touch_icon.png" : cockpitProperties.getProperty("cockpitng.mainpage.apple_touch_icon")}' ?>
+<?link rel="icon" type="image/png" sizes="32x32" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.favicon_32_32") ? "./cng/images/favicon-32x32.png" : cockpitProperties.getProperty("cockpitng.mainpage.favicon_32_32")}'?>
+<?link rel="icon" type="image/png" sizes="16x16" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.favicon_16_16") ? "./cng/images/favicon-16x16.png" : cockpitProperties.getProperty("cockpitng.mainpage.favicon_16_16")}'?>
+<?link rel="icon" type="image/png" sizes="192x192"  href='${empty cockpitProperties.getProperty("cockpitng.mainpage.android_icon") ? "./cng/images/android-icon-192x192.png" : cockpitProperties.getProperty("cockpitng.mainpage.android_icon")}' ?>
+<!-- How to correctly create/define manifest.json file: https://web.dev/articles/add-manifest -->
+<?link rel="manifest" href="./cng/manifest.json" crossorigin="use-credentials"?>
+<?link rel="mask-icon" color="#0faaff" href='${empty cockpitProperties.getProperty("cockpitng.mainpage.safari_pinned_tab") ? "./cng/images/safari-pinned-tab.svg" : cockpitProperties.getProperty("cockpitng.mainpage.safari_pinned_tab")}'?>
+<?link if='${not empty cockpitProperties.getProperty("cockpitng.overridewidgetsandeditors.css")}' rel="stylesheet" type="text/css" href='${cockpitProperties.getProperty("cockpitng.overridewidgetsandeditors.css")}'?>
+<?link if='${not empty cockpitProperties.getProperty("cockpitng.custom.iconfont.css")}' rel="stylesheet" type="text/css" href='${cockpitProperties.getProperty("cockpitng.custom.iconfont.css")}'?>
+<?script src="/cng/scripts/cockpitNGAdapter.js"?>
+<?script src="/cng/scripts/vendor/jquery.anythingzoomer.min.js"?>
+<?script src="/cng/scripts/base64v1_0.js"?>
+<?script src="/cng/scripts/vendor/jquery-ui.min.js"?>
+<?script src="/cng/scripts/vendor/jquery.mousewheel-3.1.9.js"?>
+<?script src="/cng/scripts/cockpitng-fx-1.0.js"?>
+<?script src="/cng/scripts/backspace-intercept.js"?>
+<?script src="/cng/scripts/client-info-override.js"?>
+<?script src="/cng/scripts/popup-utils.js"?>
+<?script src="/cng/scripts/loadPiwik.js"?>
+<?script src="/cng/scripts/vendor/cx-qtx-survey-button.bundle.js"?>
+<?script src="/cng/scripts/vendor/jcrop.js"?>
+<?script src="/cng/scripts/loadJcrop.js"?>
+<?script src="/cng/scripts/vendor/html-to-image.js"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:c="http://www.zkoss.org/2005/zk/client"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.hybris.com/schema/cockpitng/zul/zul.xsd">
+
+    <window id="mainWin" mode="embedded" height="100%" width="100%" shadow="false" apply="${cngMainWindowComposer}" ctrlKeys="#f4">
+        <attribute c:name="onCtrlKey"><![CDATA[
+            cngResetConnections();
+        ]]></attribute>
+        <div id="notifierStack" style="position: absolute; bottom: 4px; left: 4px; z-index: 10000;"/>
+        <widgetslot slotID='${empty(param.mainSlotId)?"mainSlot":param.mainSlotId}' height="100%" id="slot"
+                    sclass="mainWidgetSlot"/>
+        <timer id="globalEventTimer" repeats="true"
+               running="${cockpitProperties.getProperty('cockpitng.globaleventtimer.enabled')}"
+               delay="${cockpitProperties.getProperty('cockpitng.globaleventtimer.interval')}"/>
+    </window>
+
+    <script>
+        function getSiteId() {
+            const projectCode = "${configurationService.configuration.getProperty('modelt.project.code')}" || "localProject";
+            const customerCode = "${configurationService.configuration.getProperty('modelt.customer.code')}" || "localCustomer";
+            const environmentCode = "${configurationService.configuration.getProperty('modelt.environment.code')}" || "localEnvironment";
+            return (customerCode + "-" + projectCode + "-" + environmentCode);
+        } 
+        zk.afterLoad( function() {
+            zAu.send(new zk.Event(zkdt(), "onClientTimeZone", zk.mm.tz.guess(), {toServer: true}));
+            if (${configurationService.configuration.getBoolean("backoffice.cockpitng.global.click.tracking.enabled", false)}) {
+                embedTrackingCode(getSiteId());
+                ${loginTrackingService.trackingLoginType()};
+            }
+        });
+        $(document).ready(function(event) {
+            document.body.setAttribute("data-theme", "${themeStyleService.getCurrentThemeId()}");
+        });
+
+    </script>
+</zk>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./mainCnt"?>
+<zk xmlns="http://www.zkoss.org/2005/zul"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd ">
+
+	<div id="mainCnt" width="100%" style="position: relative;" height="100%" apply="${groupWizardComposer}">
+		<div style="width: 100%" class="widget-group-content">
+			<tabbox id="tabs" height="100%">
+				<tabs visible="false">
+					<tab/>
+					<tab/>
+				</tabs>
+				<tabpanels id="panels">
+					<tabpanel style="overflow: auto; height: 100%;">
+						<div style="height: 100%; position: relative;" class="widget-preferences">
+							<label value="Widget preferences:" style="font-weight: bold;"/>
+							<grid>
+								<columns>
+									<column />
+								</columns>
+								<rows>
+									<row>
+										<label value="ID:"/>					
+										<textbox value="@{groupDefinition.code}"/>
+									</row>
+									<row>
+										<label value="Name:"/>					
+										<textbox value="@{groupDefinition.name}"/>
+									</row>
+									<row>
+										<label value="Description:"/>					
+										<textbox value="@{groupDefinition.description}" rows="4"/>
+									</row>
+									<row>
+										<label value="Default title:"/>					
+										<textbox value="@{groupDefinition.defaultTitle}"/>
+									</row>
+									<row>
+										<label value="Group:"/>					
+										<textbox value="@{groupDefinition.categoryTag}"/>
+									</row>
+								</rows>
+							</grid>
+						</div>
+					</tabpanel>
+					<tabpanel height="100%">
+						<div style="height: 100%; position: relative;"  class="widget-sockets">
+							<label value="Widget sockets:" style="font-weight: bold;"/>
+							<div class="yw-info-box">
+								<label value="Drag and drop sockets to the right box to expose them." style="font-size: inherit"/>
+							</div>
+							<div class="widget-sockets-content">
+								<div class="widget-sockets-tree-list" >
+									<tree height="100%" width="100%" model="${childSocketsTreeModel}" zclass="z-tree" style="border-bottom: 0;"
+										itemRenderer="${childSocketsTreeRenderer}" checkmark="false" multiple="false" sizedByContent="true"/>
+								</div>
+								<div class="widget-sockets-chosen-list">
+									<listbox id="sockets" width="100%" height="100%" model="${selectedSocketsModel}" droppable="socketWrapper"
+										itemRenderer="${selectedSocketsRenderer}" multiple="true" oddRowSclass="y"/>
+								</div>
+							</div>
+						</div>
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</div>
+		<div style="width: 100%;"  class="widget-group-footer">
+			<hbox width="100%" widths="50%,50%">
+				<div style="padding: 10px;">
+					<button id="cancelBtn" label="Cancel"/>
+				</div>
+				<div id="updateButtonsContainer" style="text-align: right; padding: 10px;">
+					<button id="backBtn" label="Back"/>
+					<button id="nextBtn" label="Next"/>
+					<button id="finBtn" label="Finish"/>
+				</div>
+			</hbox>
+		</div>
+	</div>
+	
+</zk>		

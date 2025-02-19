@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd"
+                   id="com.hybris.cockpitng.widgets.compare">
+	<name>Compare View</name>
+	<description>Widget that displays differences between multiple items</description>
+	<defaultTitle>Compare View</defaultTitle>
+	<author>hybris</author>
+	<version>1.0</version>
+	<sockets>
+		<input id="referenceObject" type="java.lang.Object"/>
+		<input id="setObjects" type="java.lang.Object" multiplicity="Collection"/>
+		<input id="addObjects" type="java.lang.Object" multiplicity="Collection"/>
+		<input id="removeObjects" type="java.lang.Object" multiplicity="Collection"/>
+		<output id="selectedItem" type="com.hybris.cockpitng.data.TypeAwareSelectionContext"/>
+		<output id="addItemsRequest" type="com.hybris.cockpitng.data.TypeAwareSelectionContext"/>
+		<output id="objectsListUpdated" type="org.apache.commons.lang3.tuple.Pair"/>
+	</sockets>
+	<keywords>
+		<keyword>Data Manipulation</keyword>
+	</keywords>
+	<controller class="com.hybris.cockpitng.widgets.compare.CompareViewController" />
+	<settings>
+		<setting key="configCtx" type="java.lang.String" default-value="compare-view" />
+		<setting key="layout" type="java.lang.String" />
+		<setting key="defaultTypeCode" type="java.lang.String" default-value="java.lang.Object" />
+		<setting key="accordionMode" type="java.lang.Boolean" default-value="true" />
+		<setting key="editorWrapperTemplate" type="java.lang.String" default-value="com.hybris.cockpitng.editor.instanteditor(%s)" />
+		<setting key="editorWrapperTemplate.labelRenderer" type="java.lang.String" default-value="compareViewLabelRenderer" />
+</settings>
+</widget-definition>

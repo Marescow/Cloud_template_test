@@ -1,0 +1,76 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for smartedit\n"}
+{"kind":"O","text":"Configuration read smartedit\n"}
+{"kind":"O","text":"Loading plugins smartedit\n"}
+{"kind":"O","text":"Generating bundle smartedit\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(6): src/services/index.ts\n"}
+{"kind":"O","text":"(46): src/modules/index.ts\n"}
+{"kind":"O","text":"(48): src/smartedit.ts\n"}
+{"kind":"O","text":"(57): \u0000tslib.js\n"}
+{"kind":"O","text":"(57): styling/sass/styles.scss\n"}
+{"kind":"O","text":"(57): src/services/AnnouncementServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/ContextualMenu.ts\n"}
+{"kind":"O","text":"(57): src/services/DelegateRestServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/CatalogServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/ContextualMenuService.ts\n"}
+{"kind":"O","text":"(57): src/services/ExperienceServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/FeatureServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/DragAndDropCrossOriginInner.ts\n"}
+{"kind":"O","text":"(57): src/services/PageInfoServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/PageTreeServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/NotificationMouseLeaveDetectionServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/NotificationServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/PerspectiveServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/PageTreeNodeServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/RestService.ts\n"}
+{"kind":"O","text":"(57): src/services/PreviewServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/SessionServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/RestServiceFactoryInner.ts\n"}
+{"kind":"O","text":"(57): src/services/SharedDataServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/StorageServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/WaitDialogServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/UrlServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/SeNamespaceService.ts\n"}
+{"kind":"O","text":"(57): src/services/PermissionServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/AlertServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/AuthenticationServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/DecoratorService.ts\n"}
+{"kind":"O","text":"(57): src/services/TranslationsFetchServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/sakExecutor/LegacyDecoratorToCustomElementConverter.ts\n"}
+{"kind":"O","text":"(57): src/services/RenderServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/IframeClickDetectionServiceInner.ts\n"}
+{"kind":"O","text":"(57): src/services/resizeComponentService.ts\n"}
+{"kind":"O","text":"(57): src/services/ToolbarServiceFactory.ts\n"}
+{"kind":"O","text":"(58): src/services/catalogVersionPermissionServiceInner.ts\n"}
+{"kind":"O","text":"(58): src/services/ResizeListener.ts\n"}
+{"kind":"O","text":"(58): src/services/PositionRegistry.ts\n"}
+{"kind":"O","text":"(58): src/services/LegacySmarteditServicesModule.ts\n"}
+{"kind":"O","text":"(59): src/modules/system/features/contextualMenu/index.ts\n"}
+{"kind":"O","text":"(60): src/services/ConfirmationModalService.ts\n"}
+{"kind":"O","text":"(60): src/services/SmarteditServicesModule.ts\n"}
+{"kind":"O","text":"(60): src/services/UserTrackingServiceInner.ts\n"}
+{"kind":"O","text":"(60): src/services/sakExecutor/SakExecutorService.ts\n"}
+{"kind":"O","text":"(60): src/modules/system/features/contextualMenu/ContextualMenuDecoratorComponent.ts\n"}
+{"kind":"O","text":"(60): src/modules/system/features/slotContextualMenu/SlotContextualMenuItemComponent.ts\n"}
+{"kind":"O","text":"(60): src/modules/system/features/slotContextualMenu/index.ts\n"}
+{"kind":"O","text":"(60): src/services/sakExecutor/SmarteditElementComponent.ts\n"}
+{"kind":"O","text":"(60): src/services/storage/StorageModuleInner.ts\n"}
+{"kind":"O","text":"(62): src/modules/system/features/contextualMenu.scss\n"}
+{"kind":"O","text":"(62): src/components/contextualMenuItem/ContextualMenuItemComponent.ts\n"}
+{"kind":"O","text":"(62): src/modules/system/features/slotContextualMenu/SlotContextualMenuDecoratorComponent.ts\n"}
+{"kind":"O","text":"(63): src/components/SmarteditComponent.ts\n"}
+{"kind":"O","text":"(64): SE-LEGACY-JAVASCRIPT\n"}
+{"kind":"O","text":"(64): src/services/ToolbarService.ts\n"}
+{"kind":"O","text":"(64): src/modules/system/features/contextualMenu/BaseContextualMenuComponent.ts\n"}
+{"kind":"O","text":"(64): src/services/SmartEditContractChangeListener.ts\n"}
+{"kind":"O","text":"(64): src/services/storage/StorageGatewayInner.ts\n"}
+{"kind":"O","text":"(64): src/services/storage/StorageManagerGatewayInner.ts\n"}
+{"kind":"O","text":"(65): src/modules/system/features/slotContextualMenu/constants.ts\n"}
+{"kind":"O","text":"(65): src/legacySmartedit.ts\n"}
+{"kind":"O","text":"(66): src/services/storage/StorageProxy.ts\n"}
+{"kind":"O","text":"(66): src/deprecate.ts\n"}
+{"kind":"O","text":"(66): styling/less/styling.less\n"}
+{"kind":"O","text":"Bundle created smartedit\n"}
+{"kind":"O","text":"- Generated 66 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

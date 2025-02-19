@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<editor-definition id="com.hybris.cockpitng.editor.defaultfloat"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/editor-definition.xsd">
+
+	<name>Default Float Editor</name>
+	<description>Default Float Editor</description>
+	<author>hybris</author>
+	<version>0.1</version>
+
+	<type>java.lang.Float</type>
+	<editorClassName>com.hybris.cockpitng.editor.defaultfloat.DefaultFloatEditor</editorClassName>
+</editor-definition>

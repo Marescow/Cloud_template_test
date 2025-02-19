@@ -1,0 +1,12 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+
+# Creates a cron job and a trigger to clean up expired SAP verification tokens
+# The cron job is scheduled to run every 5 minutes
+
+INSERT_UPDATE CronJob; code[unique=true];job(code);singleExecutable;sessionLanguage(isocode)
+                     ;sapUserVerificationTokenCronJob;cleanUpSAPUserVerificationTokenPerformable;false;en
+
+INSERT_UPDATE Trigger;cronjob(code)[unique=true];cronExpression
+                     ; sapUserVerificationTokenCronJob; 0 0/5 * ? * * *

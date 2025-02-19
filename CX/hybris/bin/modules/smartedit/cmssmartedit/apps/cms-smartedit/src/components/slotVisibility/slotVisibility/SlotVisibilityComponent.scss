@@ -1,0 +1,27 @@
+.se-slot-visiblity-component {
+    &--globe-icon {
+        margin-left: fd-space('base');
+    }
+    &__content {
+        @include se-flex-row;
+        flex-grow: 1;
+    }
+    &__description {
+        margin-right: fd-space('s');
+        max-width: 400px;
+    }
+    &__name,
+    &__visibility {
+        color: fd-color('text', 1);
+    }
+    &__name--link {
+        cursor: pointer;
+        color: fd-color('action', 1);
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__type {
+        color: fd-color('text', 3);
+    }
+}

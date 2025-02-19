@@ -1,0 +1,64 @@
+{"kind":"O","text":"Invoking: se-packagr \n"}
+{"kind":"O","text":"Starting build for cmscommons\n"}
+{"kind":"O","text":"Configuration read cmscommons\n"}
+{"kind":"O","text":"Loading plugins cmscommons\n"}
+{"kind":"O","text":"Generating bundle cmscommons\n"}
+{"kind":"O","text":"(1): src/index.ts\n"}
+{"kind":"O","text":"(8): src/dao/index.ts\n"}
+{"kind":"O","text":"(11): src/dtos/index.ts\n"}
+{"kind":"O","text":"(18): src/services/index.ts\n"}
+{"kind":"O","text":"(32): src/CmsCommonsModule.ts\n"}
+{"kind":"O","text":"(32): \u0000tslib.js\n"}
+{"kind":"O","text":"(32): src/modules/index.ts\n"}
+{"kind":"O","text":"(34): src/utils/index.ts\n"}
+{"kind":"O","text":"(35): src/components/index.ts\n"}
+{"kind":"O","text":"(38): src/dao/resourceLocationsConstants.ts\n"}
+{"kind":"O","text":"(38): src/dao/SynchronizationResourceService.ts\n"}
+{"kind":"O","text":"(38): src/dtos/SlotStatus.ts\n"}
+{"kind":"O","text":"(38): src/dao/cmswebservices/IPageContentSlotsComponentsRestService.ts\n"}
+{"kind":"O","text":"(38): src/dtos/ISyncJob.ts\n"}
+{"kind":"O","text":"(38): src/dtos/ISyncStatus.ts\n"}
+{"kind":"O","text":"(38): src/dtos/PermissionListResponse.ts\n"}
+{"kind":"O","text":"(38): src/dtos/StructureTypeCategory.ts\n"}
+{"kind":"O","text":"(38): src/dtos/ICMSSlot.ts\n"}
+{"kind":"O","text":"(38): src/dtos/RemoveComponentInfo.ts\n"}
+{"kind":"O","text":"(38): src/services/cache/tags/index.ts\n"}
+{"kind":"O","text":"(40): src/services/AssetsService.ts\n"}
+{"kind":"O","text":"(40): src/services/IContextAwareEditableItemService.ts\n"}
+{"kind":"O","text":"(40): src/services/ComponentService.ts\n"}
+{"kind":"O","text":"(40): src/services/IComponentSharedService.ts\n"}
+{"kind":"O","text":"(40): src/services/interceptors/versionExperienceInterceptor/VersionExperienceInterceptor.ts\n"}
+{"kind":"O","text":"(40): src/services/synchronizationService.ts\n"}
+{"kind":"O","text":"(40): src/services/CMSTimeService.ts\n"}
+{"kind":"O","text":"(40): src/services/IRemoveComponentService.ts\n"}
+{"kind":"O","text":"(40): src/services/ISlotVisibilityService.ts\n"}
+{"kind":"O","text":"(40): src/services/AttributePermissionsRestService.ts\n"}
+{"kind":"O","text":"(40): src/services/TypePermissionsRestService.ts\n"}
+{"kind":"O","text":"(40): src/services/IComponentMenuConditionAndCallbackService.ts\n"}
+{"kind":"O","text":"(40): src/services/IEditorEnablerService.ts\n"}
+{"kind":"O","text":"(40): src/components/ActionableAlertComponent.ts\n"}
+{"kind":"O","text":"(40): src/utils/cmssmarteditconstants.ts\n"}
+{"kind":"O","text":"(40): src/modules/synchronizationPanel/index.ts\n"}
+{"kind":"O","text":"(45): src/modules/componentVisibilityAlert/index.ts\n"}
+{"kind":"O","text":"(49): src/components/sharedComponentButton/index.ts\n"}
+{"kind":"O","text":"(50): src/components/externalComponentButton/index.ts\n"}
+{"kind":"O","text":"(51): src/modules/synchronizationPanel/SynchronizationPanelModule.ts\n"}
+{"kind":"O","text":"(51): src/services/cache/tags/slotEvictionTags.ts\n"}
+{"kind":"O","text":"(51): src/modules/synchronizationPanel/components/index.ts\n"}
+{"kind":"O","text":"(53): src/services/cache/tags/workflowEvictionTags.ts\n"}
+{"kind":"O","text":"(53): SE-LEGACY-JAVASCRIPT\n"}
+{"kind":"O","text":"(53): src/modules/synchronizationPanel/SynchronizationUtils.ts\n"}
+{"kind":"O","text":"(53): src/modules/synchronizationPanel/constants.ts\n"}
+{"kind":"O","text":"(53): src/modules/synchronizationPanel/types.ts\n"}
+{"kind":"O","text":"(53): src/modules/componentVisibilityAlert/ComponentVisibilityAlertModule.ts\n"}
+{"kind":"O","text":"(53): src/modules/componentVisibilityAlert/IComponentVisibilityAlertService.ts\n"}
+{"kind":"O","text":"(53): src/modules/componentVisibilityAlert/types.ts\n"}
+{"kind":"O","text":"(53): src/components/externalComponentButton/ExternalComponentButtonComponent.ts\n"}
+{"kind":"O","text":"(53): src/components/sharedComponentButton/SharedComponentButtonComponent.ts\n"}
+{"kind":"O","text":"(53): src/modules/componentVisibilityAlert/ComponentVisibilityAlertComponent.ts\n"}
+{"kind":"O","text":"(53): src/modules/synchronizationPanel/components/synchronizationPanelItem/SynchronizationPanelItemComponent.ts\n"}
+{"kind":"O","text":"(53): src/modules/synchronizationPanel/components/synchronizationPanel/SynchronizationPanelComponent.ts\n"}
+{"kind":"O","text":"(54): src/modules/synchronizationPanel/SyncQueue.ts\n"}
+{"kind":"O","text":"Bundle created cmscommons\n"}
+{"kind":"O","text":"- Generated 60 files\n"}
+{"kind":"O","text":"- Output folder ./dist\n"}

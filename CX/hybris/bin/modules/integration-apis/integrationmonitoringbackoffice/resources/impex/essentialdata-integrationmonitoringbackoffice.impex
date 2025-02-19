@@ -1,0 +1,30 @@
+#
+# Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved.
+#
+$START_USERRIGHTS; ; ; ; ; ; ; ; ;
+Type      ; UID                                    ; MemberOfGroups ; Password ; Target                   ; read ; change ; create ; remove ; change_perm
+UserGroup ; backofficeintegrationadministratorrole ;                ;          ;                          ;      ;        ;        ;        ;
+
+# Access Rights for IntegrationAdministrator Users ;;;;;;;;;
+          ;                                        ;                ;          ; MonitoredRequest         ; +    ;        ;        ;
+          ;                                        ;                ;          ; MonitoredRequestError    ; +    ;        ;        ;
+          ;                                        ;                ;          ; Media                    ; +    ;        ;        ;
+          ;                                        ;                ;          ; IntegrationApiMedia      ; +    ;        ;        ;
+          ;                                        ;                ;          ; MediaFolder              ; +    ;        ;        ;
+          ;                                        ;                ;          ; MediaFormat              ; +    ;        ;        ;
+          ;                                        ;                ;          ; IntegrationRequestStatus ; +    ;        ;        ;
+$END_USERRIGHTS; ; ; ; ;
+
+$START_USERRIGHTS; ; ; ; ; ; ; ; ;
+Type      ; UID                            ; MemberOfGroups ; Password ; Target                   ; read ; change ; create ; remove ; change_perm
+UserGroup ; backofficeintegrationagentrole ;                ;          ;                          ;      ;        ;        ;        ;
+
+# Access Rights for IntegrationAgent Users ;;;;;;;;;
+          ;                                ;                ;          ; MonitoredRequest         ; +    ;        ;        ;
+          ;                                ;                ;          ; MonitoredRequestError    ; +    ;        ;        ;
+          ;                                ;                ;          ; Media                    ;      ;        ;        ;
+          ;                                ;                ;          ; IntegrationApiMedia      ;      ;        ;        ;
+          ;                                ;                ;          ; MediaFolder              ;      ;        ;        ;
+          ;                                ;                ;          ; MediaFormat              ;      ;        ;        ;
+          ;                                ;                ;          ; IntegrationRequestStatus ; +    ;        ;        ;
+$END_USERRIGHTS; ; ; ; ;

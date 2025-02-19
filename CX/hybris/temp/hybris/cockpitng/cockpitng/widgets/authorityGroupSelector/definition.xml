@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd" id="com.hybris.cockpitng.authorityGroupSelector">
+	<name>AuthorityGroupSelector</name>
+	<description></description>
+	<defaultTitle>AuthorityGroupSelector</defaultTitle>
+	<author>hybris</author>
+	<version>0.1</version>
+
+	<sockets>
+		<output type="com.hybris.cockpitng.core.user.impl.AuthorityGroup" id="authoritygroup"/>
+	</sockets>
+
+	<view src="authorityGroupSelector.zul"/>
+	<controller class="com.hybris.cockpitng.widgets.controller.AuthorityGroupSelector"/>
+	<settings>
+		<setting key="sendRedirect" type="Boolean" default-value="true"/>
+		<setting key="showFallbackBrackets" type="Boolean" default-value="true"/>
+	</settings>
+	<keywords>
+		<keyword>User</keyword>
+	</keywords>
+</widget-definition>

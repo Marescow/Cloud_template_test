@@ -1,0 +1,62 @@
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/cockpitng/cng/scss/cockpitng-globals.scss';
+@import '/home/acxias/Documents/CX/hybris/bin/modules/backoffice-framework/backoffice/resources/backoffice/generated/backoffice/scss/backoffice-variables.scss';
+
+
+@charset "UTF-8";
+
+
+.catalog-diff-container {
+    .sync-job-container {
+        padding-top: $_container-spacing-default__tiny;
+        display: flex;
+        
+        .sync-job-title {
+            line-height: $editor-defaults__inline-box--height;
+        }
+
+        .syc-job-selector {
+            flex: 1;
+            margin: 0 $_container-spacing-default__small;
+        }
+    }
+
+    .diff-results-table {
+        border-top: 1px solid var(--bo-list-group-header-border);
+
+        &-headers {
+            background: var(--bo-list-table-header-background);
+        }
+
+        .z-row {
+            .z-row-inner {
+                border-top: 1px solid var(--bo-list-border-color);
+            }
+
+            &:last-child {
+                .z-row-inner {
+                    border-bottom: 1px solid var(--bo-list-border-color);
+                }
+            }
+
+            .z-row-content {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                height: 40px;
+                line-height: 40px;
+            }
+        }
+
+        .z-row-content,
+        .z-column-content {
+            font-weight: normal;
+            font-size: var(--bo-font-size);
+            font-family: var(--bo-font-family);
+            color: var(--bo-text-color);
+            padding: 0 $_container-spacing-default__tiny;
+        }
+
+        .z-grid-header-border {
+            border-bottom: 1px solid var(--bo-list-group-header-border);
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition id="com.hybris.cockpitng.widgets.common.collectionPreview"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd">
+
+	<name>Collection Preview</name>
+	<description>Renders a preview for each item from collection</description>
+	<defaultTitle>Collection Preview</defaultTitle>
+	<author>hybris</author>
+	<version>0.1</version>
+	<view src="collectionPreview.zul" />
+	<keywords>
+		<keyword>Preview</keyword>
+	</keywords>
+
+	<sockets>
+		<input id="pageable" type="com.hybris.cockpitng.search.data.pageable.Pageable" />
+		<input id="selectedItem" type="java.lang.Object" />
+		<output id="selectedItem" type="[T]" />
+	</sockets>
+
+	<controller class="com.hybris.backoffice.widgets.collectionpreview.CollectionPreviewController" />
+
+	<settings>
+		<setting key="async" default-value="true" type="Boolean" />
+		<setting key="renderOnDemandSize" type="java.lang.Integer" default-value="50"/>
+	</settings>
+</widget-definition>

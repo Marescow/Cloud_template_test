@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<editor-definition id="com.hybris.cockpitng.editor.defaultclass"
+						 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/editor-definition.xsd">
+
+	<name>Default Class Editor</name>
+	<description>Default java.lang.Class Editor</description>
+	<author>hybris</author>
+	<version>0.1</version>
+
+	<type>java.lang.Class</type>
+	<editorClassName>com.hybris.cockpitng.editor.defaultclass.DefaultClassEditor</editorClassName>
+</editor-definition>

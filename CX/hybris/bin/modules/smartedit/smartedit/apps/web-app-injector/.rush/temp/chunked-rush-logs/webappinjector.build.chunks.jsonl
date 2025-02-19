@@ -1,0 +1,22 @@
+{"kind":"O","text":"Invoking: cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config=webpack.conf.js \n"}
+{"kind":"O","text":"Hash: \u001b[1mab4274e71cead1ab8e13\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"Version: webpack \u001b[1m4.44.1\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"Time: \u001b[1m17058\u001b[39m\u001b[22mms\n"}
+{"kind":"O","text":"Built at: 13/02/2025 \u001b[1m15:18:51\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"                    \u001b[1mAsset\u001b[39m\u001b[22m      \u001b[1mSize\u001b[39m\u001b[22m  \u001b[1mChunks\u001b[39m\u001b[22m  \u001b[1m\u001b[39m\u001b[22m           \u001b[1m\u001b[39m\u001b[22m\u001b[1mChunk Names\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"\u001b[1m\u001b[32mwebApplicationInjector.js\u001b[39m\u001b[22m  7.47 KiB       \u001b[1m0\u001b[39m\u001b[22m  \u001b[1m\u001b[32m[emitted]\u001b[39m\u001b[22m  main\n"}
+{"kind":"O","text":"Entrypoint \u001b[1mmain\u001b[39m\u001b[22m = \u001b[1m\u001b[32mwebApplicationInjector.js\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"[0] \u001b[1m./src/web-utils.ts\u001b[39m\u001b[22m 2.32 KiB {\u001b[1m\u001b[33m0\u001b[39m\u001b[22m}\u001b[1m\u001b[32m [built]\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"    cjs require \u001b[1m\u001b[36m./web-utils\u001b[39m\u001b[22m [1] \u001b[1m\u001b[35m./src/webapp-injector.ts\u001b[39m\u001b[22m 4:20-42\n"}
+{"kind":"O","text":"    cjs require \u001b[1m\u001b[36m./web-utils\u001b[39m\u001b[22m [4] \u001b[1m\u001b[35m./src/whitelisting-utils.ts\u001b[39m\u001b[22m 6:20-42\n"}
+{"kind":"O","text":"[1] \u001b[1m./src/webapp-injector.ts\u001b[39m\u001b[22m 4.5 KiB {\u001b[1m\u001b[33m0\u001b[39m\u001b[22m}\u001b[1m\u001b[32m [built]\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"    single entry \u001b[1m\u001b[36m./src/webapp-injector.ts\u001b[39m\u001b[22m  main\n"}
+{"kind":"O","text":"[2] \u001b[1m./src/heartbeat.ts\u001b[39m\u001b[22m 1.06 KiB {\u001b[1m\u001b[33m0\u001b[39m\u001b[22m}\u001b[1m\u001b[32m [built]\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"    cjs require \u001b[1m\u001b[36m./heartbeat\u001b[39m\u001b[22m [1] \u001b[1m\u001b[35m./src/webapp-injector.ts\u001b[39m\u001b[22m 3:20-42\n"}
+{"kind":"O","text":"[4] \u001b[1m./src/whitelisting-utils.ts\u001b[39m\u001b[22m 3.67 KiB {\u001b[1m\u001b[33m0\u001b[39m\u001b[22m}\u001b[1m\u001b[32m [built]\u001b[39m\u001b[22m\n"}
+{"kind":"O","text":"    cjs require \u001b[1m\u001b[36m./whitelisting-utils\u001b[39m\u001b[22m [1] \u001b[1m\u001b[35m./src/webapp-injector.ts\u001b[39m\u001b[22m 5:29-60\n"}
+{"kind":"O","text":"    + 1 hidden module\n"}
+{"kind":"O","text":"\n"}
+{"kind":"O","text":"\u001b[1m\u001b[33mWARNING in configuration\n"}
+{"kind":"O","text":"The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\n"}
+{"kind":"O","text":"You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/\u001b[39m\u001b[22m\n"}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:zk="http://www.zkoss.org/2005/zk" xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.hybris.com/schema/cockpitng/zul/zul.xsd" style="height: 100%; width: 100%">
+    <div id="toolbarContainer" sclass="yw-listview-actioncontainer">
+        <div sclass="y-toolbar">
+            <!-- <div sclass="y-toolbar-leftslot-widget">
+                <widgetslot slotID="toolbarLeft"/>
+            </div> -->
+            <div sclass="y-toolbar-inner">
+                <widgetslot slotID="toolbarLeft" sclass="yw-compareview-leftslot-widget"/>
+                <label id="comapreViewTitle" sclass="yw-compareview-header-title" value="${labels.compareView.title}"/>
+                <div sclass="y-toolbar-rightslot yw-compareview-rightslot">    
+                    <div sclass="ye-save-container">
+                        <button id="saveButton" label="${labels.compareView.bth.save}" sclass="y-btn-primary"/>
+                    </div>
+                    <div sclass="ye-cancel-container">
+                        <button id="cancelButton" label="${labels.compareView.bth.cancel}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="view" class="yw-compareview-grid"/>
+</widget>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition id="com.hybris.cockpitng.nextItemSelector"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd">
+
+    <name>Next Item Selector</name>
+    <description>Provides default implementation of selecting next item</description>
+    <defaultTitle>Next Item Selector</defaultTitle>
+    <author>hybris</author>
+    <version>1.0</version>
+
+	<sockets>
+        <input id="nextItemSelectorContext" type="com.hybris.cockpitng.widgets.navigation.NavigationItemSelectorContext" />
+        <output id="nextItemSelectorInvocation" type="[T]" />
+	</sockets>
+	<view src="none" />
+	<controller
+		class="com.hybris.cockpitng.widgets.navigation.next.NextItemSelectorController" />
+	<keywords>
+		<keyword>Navigation</keyword>
+	</keywords>
+
+</widget-definition>

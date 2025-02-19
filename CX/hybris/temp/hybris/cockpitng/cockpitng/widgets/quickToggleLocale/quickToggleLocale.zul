@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+	<widget xmlns="http://www.zkoss.org/2005/zul"
+			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.hybris.com/schema/cockpitng/zul/zul.xsd"
+			  sclass="yw-quickToggleLocale-widget">
+
+		<popup id="quickToogleLocale" sclass="yw-quickToggleLocale yw-systemBarMenu-popup">
+			<div>
+				<tabbox>
+					<tabs>
+						<tab id="dataLocalesTab" label="${labels.data.locale}" />
+						<tab id="uiLocalesTab" label="${labels.ui.locale}" />
+					</tabs>
+					<tabpanels>
+						<tabpanel>
+							<listbox id="localesList" multiple="true" checkmark="true" mold="default" width="240px"
+											emptyMessage="${labels.noAvailable}">
+							</listbox>
+						</tabpanel>
+						<tabpanel>
+							<listbox id="uiLocalesList" multiple="false" checkmark="true" mold="default" width="240px"
+									 emptyMessage="${labels.noAvailable}">
+							</listbox>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</div>
+		</popup>
+		<toolbarbutton id="quickToogleLocaleBtn" popup="quickToogleLocale, position=after_start"
+							image="${wr}/images/icon_system_language.svg" tooltiptext="${labels.locale.tooltip}">
+		</toolbarbutton>
+	</widget>
+</zk>

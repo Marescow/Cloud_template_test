@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<editor-definition id="com.hybris.cockpitng.editor.defaultlist"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/editor-definition.xsd">
+
+	<name>Default List Editor</name>
+	<description>Default List Editor</description>
+	<author>hybris</author>
+	<version>0.1</version>
+
+	<type>^List\((.*)\)$</type>
+	<editorClassName>com.hybris.cockpitng.editor.defaultlist.DefaultListEditorRenderer</editorClassName>
+</editor-definition>

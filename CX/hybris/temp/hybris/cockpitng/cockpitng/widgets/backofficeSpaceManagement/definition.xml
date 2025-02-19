@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd"
+						 id="com.hybris.backoffice.spaceManagement">
+	<name>Backoffice Space Management</name>
+	<description>Backoffice Space Management</description>
+
+	<author>hybris</author>
+	<version>1.0</version>
+
+	<view src="none"/>
+
+	<controller class="com.hybris.backoffice.widgets.spacemanagement.BackofficeSpaceManagementController"/>
+	<sockets>
+		<input id="navigationTreeSelectedObject" type="java.lang.Object"/>
+		<input id="listSelectedObject" type="java.lang.Object"/>
+		<input id="searchData" type="com.hybris.backoffice.widgets.advancedsearch.impl.AdvancedSearchData"/>
+		<output id="collapseState" type="com.hybris.cockpitng.widgets.controller.collapsiblecontainer.CollapsibleContainerState"/>
+
+	</sockets>
+	<keywords>
+		<keyword>Backoffice</keyword>
+	</keywords>
+	<settings>
+		<setting key="expandBottomSectionOnEmptyListSelection" type="Boolean" default-value="false"/>
+	</settings>
+</widget-definition>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?page title="Rename dialog" language="xul/html"?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:c="http://www.zkoss.org/2005/zk/client">
+	<widget id="imageCropper" sclass="image-cropper">
+		<div id="imageCropperContainer" sclass="image-cropper-container">
+			<div id="previewContainer" sclass="image-cropper-preview">
+				<image id="imagePreview" sclass="image-cropper-image"/>
+				<label id="cropperWarningLabel" sclass="image-cropper-warning"></label>
+			</div>
+			<div id="actionsContainer" sclass="image-cropper-actions">
+				<button sclass="cropper-confirm-button y-btn-primary" id="confirmBtn" c:onClick="CockpitNG.sendEvent(this.uuid, 'onUserConfirmed', getCurrentCropperPosition())"></button>
+				<button sclass="cropper-cancel-button y-btn-transparent" id="cancelBtn"/>
+			</div>
+		</div>
+	</widget>
+</zk>

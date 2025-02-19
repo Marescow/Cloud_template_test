@@ -1,0 +1,3 @@
+  (
+    $orderEntry := OrderEntryRAO(price > new java.math.BigDecimal("100"), productCode == "2", price >= new java.math.BigDecimal("22") || (quantity >= new java.math.BigDecimal("11") && categoryCodes contains "11"), price >= new java.math.BigDecimal("33") || categoryCodes >= "333")
+  )

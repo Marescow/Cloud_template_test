@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<xs:schema elementFormDefault="qualified" version="1.0"
+           targetNamespace="http://www.hybris.com/cockpitng/config/extendedsplitlayout"
+           xmlns="http://www.hybris.com/cockpitng/config/extendedsplitlayout"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:yc="http://www.hybris.com/cockpitng/config/common">
+
+	<xs:import namespace="http://www.hybris.com/cockpitng/config/common"
+			   schemaLocation="classpath://schemas/config/hybris/common-config.xsd"/>
+
+	<xs:element name="extended-split-layout">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="layout-mapping" type="LayoutMapping" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="defaultLayout" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="LayoutMapping">
+		<xs:attribute name="parentLayout" type="xs:string" use="required"/>
+		<xs:attribute name="selfLayout" type="xs:string" use="required"/>
+		<xs:attribute name="merge-mode" type="yc:mergeMode" default="MERGE"/>
+	</xs:complexType>
+</xs:schema>

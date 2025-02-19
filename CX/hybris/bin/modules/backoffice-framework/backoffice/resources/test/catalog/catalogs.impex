@@ -1,0 +1,83 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# Define catalog
+$catalog-id=testCatalog
+$catalog-name-en=testCatalog_en
+$catalog-name-de=testCatalog_de
+
+# Define catalog version
+$catalog-version=Online
+$catalogversion=catalogversion(catalog(id),version)[unique=true,default=$catalog-id : $catalog-version]
+
+# Define category
+$testCategory0-id=testCategory0
+$testCategory0-name-en=testCategory0_en
+$testCategory0-name-de=testCategory0_de
+$testCategory1-id=testCategory1
+$testCategory1-name-en=testCategory1_en
+$testCategory1-name-de=testCategory1_de
+$testCategory2-id=testCategory2
+$testCategory2-name-en=testCategory2_en
+$testCategory2-name-de=testCategory2_de
+$testCategory3-id=testCategory3
+$testCategory3-name-en=testCategory3_en
+$testCategory3-name-de=testCategory3_de
+$testCategory10-id=testCategory10
+$testCategory10-name-en=testCategory10_en
+$testCategory10-name-de=testCategory10_de
+$supercategories=supercategories(code,catalogversion(catalog(id[default=$catalog-id]),version[default=$catalog-version]))
+
+# Define product
+$testProduct0-id=testProduct0
+$testProduct0-name-en=testProduct0_en
+$testProduct0-name-de=testProduct0_de
+$testProduct1-id=testProduct1
+$testProduct1-name-en=testProduct1_en
+$testProduct1-name-de=testProduct1_de
+$testProduct2-id=testProduct2
+$testProduct2-name-en=testProduct2_en
+$testProduct2-name-de=testProduct2_de
+$testProduct3-id=testProduct3
+$testProduct3-name-en=testProduct3_en
+$testProduct3-name-de=testProduct3_de
+$testProduct4-id=testProduct4
+$testProduct4-name-en=testProduct4_en
+$testProduct4-name-de=testProduct4_de
+$testProduct10-id=1testProduct0
+$testProduct10-name-en=testProduct10_en
+$testProduct10-name-de=testProduct10_de
+
+# Define price
+$prices=europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+
+INSERT_UPDATE Language;isocode[unique=true];active;;;;;;
+;fr;true;;;;;;
+
+UPDATE Language;isocode[unique=true];name[lang=de];name[lang=en];name[lang=fr];;;;;
+;de;Deutsch;German;Allemagne;;;;;
+;en;Englisch;English;Anglais;;;;;
+;fr;Französisch;French;Français;;;;;
+
+# insert catalog data
+INSERT_UPDATE Catalog;id[unique=true];name[lang=de];name[lang=en];name[lang=fr];defaultCatalog
+;$catalog-id;$catalog-name-de;$catalog-name-en;;true
+
+INSERT_UPDATE CatalogVersion; catalog(id)[unique=true]; version[unique=true]; active;defaultCurrency(isocode)
+;$catalog-id;$catalog-version;true;EUR
+
+INSERT_UPDATE Category;code[unique=true];$catalogversion;name[lang=de];name[lang=en];name[lang=fr];$supercategories
+;$testCategory0-id;;$testCategory0-name-de;$testCategory0-name-en;;;
+;$testCategory10-id;;$testCategory0-name-de;$testCategory0-name-en;;;
+;$testCategory1-id;;$testCategory1-name-de;$testCategory1-name-en;;$testCategory0-id
+;$testCategory2-id;;$testCategory2-name-en;$testCategory2-name-en;;$testCategory0-id
+;$testCategory3-id;;$testCategory3-name-en;$testCategory3-name-en;;$testCategory2-id
+
+INSERT_UPDATE Product;code[unique=true];$catalogversion;name[lang=de];name[lang=en];name[lang=fr];unit(code);$prices;approvalStatus(code);owner(Principal.uid);startLineNumber;$supercategories
+;$testProduct0-id;;$testProduct0-name-de;$testProduct0-name-en;;pieces;157,95 EUR;approved;admin;0;$testCategory0-id
+;$testProduct10-id;;$testProduct10-name-de;$testProduct10-name-en;;pieces;167,95 EUR;check;admin;0;$testCategory10-id
+;$testProduct1-id;;$testProduct1-name-de;$testProduct1-name-en;;pieces;177,95 EUR;approved;admin;0;$testCategory0-id,$testCategory1-id
+;$testProduct2-id;;$testProduct2-name-de;$testProduct2-name-en;;pieces;187,95 EUR;check;admin;0;$testCategory0-id,$testCategory2-id
+;$testProduct3-id;;$testProduct3-name-de;$testProduct3-name-en;;pieces;197,95 EUR;approved;admin;0;$testCategory0-id,$testCategory3-id
+;$testProduct4-id;;$testProduct4-name-de;$testProduct4-name-en;;pieces;147,95 EUR;check;admin;0;$testCategory0-id,$testCategory3-id
+# insert catalog data

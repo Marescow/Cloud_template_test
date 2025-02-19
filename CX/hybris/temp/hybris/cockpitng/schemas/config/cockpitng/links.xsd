@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<xs:schema elementFormDefault="qualified" version="1.0"
+           targetNamespace="http://www.hybris.com/cockpitng/config/links"
+           xmlns:tns="http://www.hybris.com/cockpitng/config/links"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:yc="http://www.hybris.com/cockpitng/config/common">
+
+    <xs:import namespace="http://www.hybris.com/cockpitng/config/common"
+               schemaLocation="classpath://schemas/config/hybris/common-config.xsd"/>
+
+    <xs:element name="links">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="link" type="tns:link" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="link">
+        <xs:complexContent>
+            <xs:extension base="yc:positioned">
+                <xs:attribute name="label" type="xs:string" use="required"/>
+                <xs:attribute name="icon" type="xs:string"/>
+                <xs:attribute name="url" type="xs:string"/>
+                <xs:attribute name="target" type="tns:target"/>
+                <xs:attribute name="merge-mode" type="yc:mergeMode"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="target" final="restriction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="_blank"/>
+            <xs:enumeration value="_self"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

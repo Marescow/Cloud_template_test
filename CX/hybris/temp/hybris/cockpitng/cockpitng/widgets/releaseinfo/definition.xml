@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition id="com.backoffice.releaseinfo"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://www.hybris.com/schema/cockpitng/widget-definition.xsd">
+
+	<name>Release</name>
+	<description>Release Information</description>
+	<defaultTitle>Release Info</defaultTitle>
+	<author>hybris</author>
+	<version>1.0</version>
+
+	<keywords>
+		<keyword>_hidden</keyword>
+	</keywords>
+</widget-definition>

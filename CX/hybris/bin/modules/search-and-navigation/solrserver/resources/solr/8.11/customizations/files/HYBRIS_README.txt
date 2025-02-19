@@ -1,0 +1,147 @@
+
+hybris Changes
+=============================
+
+This is a modified version of Solr.
+
+The following files/directories were removed:
+- docs
+- example
+- dist/test-framework
+- dist/solr-test-framework-8.11.4.jar
+- server/solr-webapp/webapp/WEB-INF/lib/htrace-core4-4.1.0-incubating.jar
+- contrib/langid/lib/jsonic-1.2.7.jar
+- licenses/jsonic-1.2.7.jar.sha1
+- licenses/jsonic-LICENSE-ASL.txt
+- licenses/jsonic-NOTICE.txt
+
+The following files/directories were added:
+- HYBRIS_README.txt
+- contrib/hybris
+- server/solr/security.json.example
+- server/solr/solr.p12
+- server/solr/solr_client.p12
+
+The following files/directories were modified/replaced:
+- bin/solr:
+	- workaround for https://issues.apache.org/jira/browse/SOLR-15435 (lines 1859-1863, 1928-1933)
+- bin/solr.cmd:
+	- workaround for https://issues.apache.org/jira/browse/SOLR-7283 (lines 19-20)
+	- workaround for https://issues.apache.org/jira/browse/SOLR-13985 (lines 221-222, 984-989, 1109-1113, 1367 - remove "-Djetty.host=%SOLR_JETTY_HOST%", 1375 - remove "-Djetty.host=%SOLR_JETTY_HOST%")
+- bin/solr.in.cmd:
+	- authentication and ssl configuration example (lines 225-248)
+	- remove UseLargePages parameter from GC_TUNE parameters due to problems with running solr within docker container (line 250)
+	- workaround for https://issues.apache.org/jira/browse/SOLR-13985 (lines 117-123)
+- bin/solr.in.sh:
+	- authentication and ssl configuration example (lines 266-289)
+	- remove UseLargePages parameter from GC_TUNE parameters due to problems with running solr within docker container (line 291)
+	- workaround for https://issues.apache.org/jira/browse/SOLR-13985 (lines 148-154)
+- server/resources/log4j2.xml:
+	- change log level for zookeeper to error following changes done as a part of https://issues.apache.org/jira/browse/SOLR-15968 (68-69)
+- server/etc/jetty-http.xml
+    - workaround for https://issues.apache.org/jira/browse/SOLR-15435 (line 41)
+- server/etc/jetty-https.xml
+    - workaround for https://issues.apache.org/jira/browse/SOLR-15435 (line 66)
+- server/etc/jetty-https8.xml
+    - workaround for https://issues.apache.org/jira/browse/SOLR-15435 (line 60)
+- server/solr/solr.xml
+- server/solr/configsets
+- commons-lang3 and commons-text (due to https://nvd.nist.gov/vuln/detail/CVE-2022-42889)
+    - licenses/commons-lang3-3.10.0.jar.sha1 -> licenses/commons-lang3-3.12.0.jar.sha1
+    - contrib/velocity/lib/commons-lang3-3.10.0.jar -> contrib/velocity/lib/commons-lang3-3.12.0.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/commons-lang3-3.10.0.jar -> server/solr-webapp/webapp/WEB-INF/lib/commons-lang3-3.12.0.jar
+- curator libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2019-0201)
+    - licenses/curator-recipes-2.13.0.jar.sha1 -> licenses/curator-recipes-5.5.0.jar.sha1
+    - licenses/curator-client-2.13.0.jar.sha1 -> licenses/curator-client-5.5.0.jar.sha1
+    - licenses/curator-framework-2.13.0.jar.sha1 -> licenses/curator-framework-5.5.0.jar.sha1
+    - server/solr-webapp/webapp/WEB-INF/lib/curator-client-2.13.0.jar -> server/solr-webapp/webapp/WEB-INF/lib/curator-client-5.5.0.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/curator-framework-2.13.0.jar -> server/solr-webapp/webapp/WEB-INF/lib/curator-framework-5.5.0.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/curator-recipes-2.13.0.jar -> server/solr-webapp/webapp/WEB-INF/lib/curator-recipes-5.5.0.jar
+- Google OAuth Client Library For Java (due to https://nvd.nist.gov/vuln/detail/CVE-2021-22573)
+    - licenses/google-oauth-client-1.33.3.jar.sha1 -> licenses/google-oauth-client-1.34.1.jar.sha1
+    - contrib/gcs-repository/lib/google-oauth-client-1.33.3.jar -> contrib/gcs-repository/lib/google-oauth-client-1.34.1.jar
+- hadoop libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2021-25642, https://nvd.nist.gov/vuln/detail/CVE-2022-26612, https://nvd.nist.gov/vuln/detail/CVE-2022-25168 and https://sap.blackducksoftware.com/api/vulnerabilities/BDSA-2022-4085)
+	- licenses/hadoop-annotations-3.2.4.jar.sha1 -> licenses/hadoop-annotations-3.3.5.jar.sha1
+	- server/solr-webapp/webapp/WEB-INF/lib/hadoop-annotations-3.2.4.jar -> server/solr-webapp/webapp/WEB-INF/lib/hadoop-annotations-3.3.5.jar
+	- licenses/hadoop-auth-3.2.4.jar.sha1 -> licenses/hadoop-auth-3.3.5.jar.sha1
+	- server/solr-webapp/webapp/WEB-INF/lib/hadoop-auth-3.2.4.jar -> server/solr-webapp/webapp/WEB-INF/lib/hadoop-auth-3.3.5.jar
+	- licenses/hadoop-common-3.2.4-tests.jar.sha1 -> licenses/hadoop-common-3.3.5-tests.jar.sha1
+	- licenses/hadoop-common-3.2.4.jar.sha1 -> licenses/hadoop-common-3.3.5.jar.sha1
+	- server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.2.4.jar -> server/solr-webapp/webapp/WEB-INF/lib/hadoop-common-3.3.5.jar
+	- licenses/hadoop-hdfs-3.2.4-tests.jar.sha1 -> licenses/hadoop-hdfs-3.3.5-tests.jar.sha1
+	- licenses/hadoop-hdfs-3.2.4.jar.sha1 -> licenses/hadoop-hdfs-3.3.5.jar.sha1
+	- licenses/hadoop-hdfs-client-3.2.4.jar.sha1 -> licenses/hadoop-hdfs-client-3.3.5.jar.sha1
+	- server/solr-webapp/webapp/WEB-INF/lib/hadoop-hdfs-client-3.2.4.jar -> server/solr-webapp/webapp/WEB-INF/lib/hadoop-hdfs-client-3.3.5.jar
+	- licenses/hadoop-minicluster-3.2.4.jar.sha1 -> licenses/hadoop-minicluster-3.3.5.jar.sha1
+	- licenses/hadoop-minikdc-3.2.4.jar.sha1 -> licenses/hadoop-minikdc-3.3.5.jar.sha1
+- jackson-databind library (due to https://nvd.nist.gov/vuln/detail/CVE-2022-42003, https://nvd.nist.gov/vuln/detail/CVE-2022-42004 and https://nvd.nist.gov/vuln/detail/CVE-2023-35116)
+	- contrib/prometheus-exporter/lib/jackson-databind-2.15.2.jar -> contrib/prometheus-exporter/lib/jackson-databind-2.16.1.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.15.2.jar -> server/solr-webapp/webapp/WEB-INF/lib/jackson-databind-2.16.1.jar
+	- licenses/jackson-databind-2.15.2.jar.sha1 -> licenses/jackson-databind-2.16.1.jar.sha1
+- janino libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2023-33546)
+    - server/solr-webapp/webapp/WEB-INF/lib/commons-compiler-3.1.8.jar -> server/solr-webapp/webapp/WEB-INF/lib/commons-compiler-3.1.10.jar
+    - licenses/commons-compiler-3.1.8.jar.sha1 -> licenses/commons-compiler-3.1.10.jar.sha1
+    - server/solr-webapp/webapp/WEB-INF/lib/janino-3.1.8.jar -> server/solr-webapp/webapp/WEB-INF/lib/janino-3.1.10.jar
+    - licenses/janino-3.1.8.jar.sha1 -> licenses/janino-3.1.10.jar.sha1
+- jose4j library (due to https://nvd.nist.gov/vuln/detail/CVE-2023-51775)
+    - server/solr-webapp/webapp/WEB-INF/lib/jose4j-0.6.5.jar -> server/solr-webapp/webapp/WEB-INF/lib/jose4j-0.9.4.jar
+    - licenses/jose4j-0.6.5.jar.sha1 -> licenses/jose4j-0.9.4.jar.sha1
+- jQueryUI libraries(due to https://nvd.nist.gov/vuln/detail/CVE-2021-41182, https://nvd.nist.gov/vuln/detail/CVE-2021-41183, https://nvd.nist.gov/vuln/detail/CVE-2021-41184)
+	- updated server/solr-webapp/webapp/libs/jquery-ui.min.js
+	- updated server/solr-webapp/webapp/css/angular/jquery-ui.structure.min.css
+	- updated server/solr-webapp/webapp/css/angular/jquery-ui.min.css
+- netty libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2021-43797, https://nvd.nist.gov/vuln/detail/CVE-2022-24823, https://nvd.nist.gov/vuln/detail/CVE-2021-41881 and https://nvd.nist.gov/vuln/detail/CVE-2023-34462)
+	- licenses/netty-all-4.1.99.Final.jar.sha1 -> licenses/netty-all-4.1.108.Final.jar.sha1
+	- licenses/netty-buffer-4.1.99.Final.jar.sha1 -> licenses/netty-buffer-4.1.108.Final.jar.sha1
+	- dist/solrj-lib/netty-buffer-4.1.99.Final.jar -> dist/solrj-lib/netty-buffer-4.1.108.Final.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/netty-buffer-4.1.99.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-buffer-4.1.108.Final.jar
+	- licenses/netty-codec-4.1.99.Final.jar.sha1 -> licenses/netty-codec-4.1.108.Final.jar.sha1
+	- dist/solrj-lib/netty-codec-4.1.99.Final.jar -> dist/solrj-lib/netty-codec-4.1.108.Final.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.99.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-codec-4.1.108.Final.jar
+	- licenses/netty-common-4.1.99.Final.jar.sha1 -> licenses/netty-common-4.1.108.Final.jar.sha1
+	- dist/solrj-lib/netty-common-4.1.99.Final.jar -> dist/solrj-lib/netty-common-4.1.108.Final.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.99.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-common-4.1.108.Final.jar
+	- licenses/netty-handler-4.1.99.Final.jar.sha1 -> licenses/netty-handler-4.1.108.Final.jar.sha1
+	- dist/solrj-lib/netty-handler-4.1.99.Final.jar -> dist/solrj-lib/netty-handler-4.1.108.Final.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.99.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-handler-4.1.108.Final.jar
+	- licenses/netty-resolver-4.1.99.Final.jar.sha1 -> licenses/netty-resolver-4.1.108.Final.jar.sha1
+	- dist/solrj-lib/netty-resolver-4.1.99.Final.jar -> dist/solrj-lib/netty-resolver-4.1.108.Final.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/netty-resolver-4.1.99.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-resolver-4.1.108.Final.jar
+	- licenses/netty-transport-4.1.99.Final.jar.sha1 -> licenses/netty-transport-4.1.108.Final.jar.sha1
+	- dist/solrj-lib/netty-transport-4.1.99.Final.jar -> dist/solrj-lib/netty-transport-4.1.108.Final.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/netty-transport-4.1.99.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-transport-4.1.108.Final.jar
+	- licenses/netty-transport-native-epoll-4.1.99.Final.jar.sha1 -> licenses/netty-transport-native-epoll-4.1.108.Final.jar.sha1
+	- dist/solrj-lib/netty-transport-native-epoll-4.1.99.Final.jar -> dist/solrj-lib/netty-transport-native-epoll-4.1.108.Final.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.99.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.108.Final.jar
+	- licenses/netty-transport-native-unix-common-4.1.99.Final.jar.sha1 -> licenses/netty-transport-native-unix-common-4.1.108.Final.jar.sha1
+	- dist/solrj-lib/netty-transport-native-unix-common-4.1.99.Final.jar -> dist/solrj-lib/netty-transport-native-unix-common-4.1.108.Final.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.99.Final.jar -> server/solr-webapp/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.108.Final.jar
+- protobuf libraries due to (due to https://nvd.nist.gov/vuln/detail/CVE-2021-22570, https://nvd.nist.gov/vuln/detail/CVE-2021-22569, https://nvd.nist.gov/vuln/detail/CVE-2022-1941)
+	- licenses/protobuf-java-3.15.0.jar.sha1 -> licenses/protobuf-java-3.21.7.jar.sha1
+	- contrib/gcs-repository/lib/protobuf-java-3.15.0.jar -> contrib/gcs-repository/lib/protobuf-java-3.21.7.jar
+	- server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.15.0.jar -> server/solr-webapp/webapp/WEB-INF/lib/protobuf-java-3.21.7.jar
+	- licenses/protobuf-java-util-3.15.0.jar.sha1 -> licenses/protobuf-java-util-3.21.7.jar.sha1
+	- contrib/gcs-repository/lib/protobuf-java-util-3.15.0.jar -> contrib/gcs-repository/lib/protobuf-java-util-3.21.7.jar
+- zookeeper libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2021-4104, https://nvd.nist.gov/vuln/detail/CVE-2022-23305, https://nvd.nist.gov/vuln/detail/CVE-2022-23302, https://nvd.nist.gov/vuln/detail/CVE-2020-36518, https://nvd.nist.gov/vuln/detail/CVE-2021-37533, https://nvd.nist.gov/vuln/detail/CVE-2021-34428, https://nvd.nist.gov/vuln/detail/CVE-2020-15522, https://nvd.nist.gov/vuln/detail/CVE-2022-41915, https://nvd.nist.gov/vuln/detail/CVE-2023-34453, https://nvd.nist.gov/vuln/detail/CVE-2023-34454, https://nvd.nist.gov/vuln/detail/CVE-2023-34455, https://nvd.nist.gov/vuln/detail/CVE-2023-44981 and https://nvd.nist.gov/vuln/detail/CVE-2024-23944)
+    - licenses/zookeeper-3.6.2.jar.sha1 -> licenses/zookeeper-3.8.4.jar.sha1
+    - licenses/zookeeper-jute-3.6.2.jar.sha1 -> licenses/zookeeper-jute-3.8.4.jar.sha1
+    - dist/solrj-lib/zookeeper-3.6.2.jar -> dist/solrj-lib/zookeeper-3.8.4.jar
+    - dist/solrj-lib/zookeeper-jute-3.6.2.jar -> dist/solrj-lib/zookeeper-jute-3.8.4.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.6.2.jar -> server/solr-webapp/webapp/WEB-INF/lib/zookeeper-3.8.4.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/zookeeper-jute-3.6.2.jar -> server/solr-webapp/webapp/WEB-INF/lib/zookeeper-jute-3.8.4.jar
+- snappy-java libraries (due to https://nvd.nist.gov/vuln/detail/CVE-2023-34454, https://nvd.nist.gov/vuln/detail/CVE-2023-34453, https://nvd.nist.gov/vuln/detail/CVE-2023-34455, https://nvd.nist.gov/vuln/detail/CVE-2023-43642)
+    - licenses/snappy-java-1.1.10.1.jar.sha1 -> licenses/snappy-java-1.1.10.4.jar.sha1
+    - dist/solrj-lib/snappy-java-1.1.10.1.jar -> dist/solrj-lib/snappy-java-1.1.10.4.jar
+    - server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.10.1.jar -> server/solr-webapp/webapp/WEB-INF/lib/snappy-java-1.1.10.4.jar
+- json-path library (due to https://nvd.nist.gov/vuln/detail/CVE-2023-51074)
+    - licenses/json-path-2.7.0.jar.sha1 -> licenses/json-path-2.9.0.jar.sha1
+    - server/solr-webapp/webapp/WEB-INF/lib/json-path-2.7.0.jar -> server/solr-webapp/webapp/WEB-INF/lib/json-path-2.9.0.jar
+- ion-java library (due to https://nvd.nist.gov/vuln/detail/CVE-2024-21634)
+    - licenses/ion-java-1.0.2.jar.sha1 -> licenses/ion-java-1.10.5.jar.sha1
+    - contrib/s3-repository/lib/ion-java-1.0.2.jar -> contrib/s3-repository/lib/ion-java-1.10.5.jar
+- commons-configuration2 due to (due to https://nvd.nist.gov/vuln/detail/CVE-2024-29133)
+    - licenses/commons-configuration2-2.8.0.jar.sha1 -> licenses/commons-configuration2-2.10.1.jar.sha1
+    - server/solr-webapp/webapp/WEB-INF/lib/commons-configuration2-2.8.0.jar -> server/solr-webapp/webapp/WEB-INF/lib/commons-configuration2-2.10.1.jar
+- commons-compress due to (due to https://nvd.nist.gov/vuln/detail/CVE-2024-25710)
+    - licenses/commons-compress-1.21.jar.sha1 -> licenses/commons-compress-1.26.0.jar.sha1
+    - contrib/extraction/lib/commons-compress-1.21.jar -> contrib/extraction/lib/commons-compress-1.26.0.jar

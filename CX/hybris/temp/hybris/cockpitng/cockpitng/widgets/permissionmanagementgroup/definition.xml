@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition id="com.hybris.cockpitng.backoffice.permissionmanagementgroup">
+
+    <controller class="com.hybris.backoffice.widgets.permissionmanagement.PermissionManagementGroupController"/>
+	<sockets>
+		<input id="inputObjectInput" type="java.lang.Object" visibility="default"/>
+		<output id="inputObjectInputForward" type="java.lang.Object" visibility="invisible"/>
+		<forward input="inputObjectInput" output="inputObjectInputForward"/>
+	</sockets>
+	<name>Permission Management</name>
+	<description>Encapsulates widgets forming permission management mashup</description>
+	<version>1.0</version>
+	<keywords>
+		<keyword>Groups</keyword>
+	</keywords>
+</widget-definition>

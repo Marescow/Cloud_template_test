@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<widget-definition id="com.hybris.cockpitng.backoffice.referenceadvancedsearchgroup">
+
+	<name>Reference Advanced Search Group</name>
+	<description>Allows to search references with Advanced Search</description>
+	<version>1.0</version>
+	<sockets>
+		<input id="referenceSearchCtx" type="com.hybris.cockpitng.data.TypeAwareSelectionContext"/>
+		<input id="cancelOutputForward" type="java.lang.Object" visibility="invisible"/>
+		<input id="selectedReferencesOutputForward" type="java.lang.Object" multiplicity="List" visibility="invisible"/>
+
+		<output id="selectedReferencesOutput" type="java.lang.Object" multiplicity="List"/>
+		<output id="cancelOutput" type="java.lang.Object"/>
+
+		<forward input="selectedReferencesOutputForward" output="selectedReferencesOutput"/>
+		<forward input="cancelOutputForward" output="cancelOutput"/>
+	</sockets>
+	<keywords>
+		<keyword>Search</keyword>
+	</keywords>
+</widget-definition>

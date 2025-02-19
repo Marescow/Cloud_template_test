@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved
+-->
+<zk>
+
+	<config-name>cockpitng</config-name>
+
+	<system-config>
+		<ui-factory-class>com.hybris.cockpitng.util.CockpitUIFactory</ui-factory-class>
+		<disable-zscript>false</disable-zscript>
+		<!-- It comes from ZK patch for https://nvd.nist.gov/vuln/detail/CVE-2022-36537. -->
+		<file-item-factory-class>com.hybris.cockpitng.zk.patch.UploadFixItemFactory</file-item-factory-class>
+	</system-config>
+
+	<library-property>
+		<name>org.zkoss.zk.ui.invokeFirstRootForAfterKeyDown.enabled</name>
+		<value>true</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zk.ui.composer.autowire.xel</name>
+		<value>true</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zk.ui.composer.autowire.zscript</name>
+		<value>true</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.theme.preferred</name>
+		<value>atlantic</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zkmax.tablet.theme.disabled</name>
+		<value>true</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zul.tree.rightSelect</name>
+		<value>false</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zk.ui.versionInfo.enabled</name>
+		<value>false</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.theme.atlantic.useGoogleFont.disabled</name>
+		<value>true</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zk.ui.uuidRecycle.disabled</name>
+		<value>true</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zul.drop.allowNullDragged</name>
+		<value>true</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zk.moment.timezone.path</name>
+		<value>~./js/zk-patches/2023c.json</value>
+	</library-property>
+	<library-property>
+        <name>org.zkoss.web.servlet.http.URLEncoder</name>
+        <value>com.hybris.backoffice.web.ZKXSSURLEncoder</value>
+    </library-property>
+
+	<preference>
+		<name>org.zkoss.zk.ui.WebApp.name</name>
+		<value>Cockpit</value>
+	</preference>
+
+	<listener>
+		<listener-class>com.hybris.cockpitng.util.CockpitComponentUILifeCycle</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.hybris.cockpitng.util.CockpitComponentCleanup</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.hybris.cockpitng.util.CockpitUIListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.hybris.cockpitng.engine.DefaultCockpitWebAppInit</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.zkoss.zkplus.spring.DelegatingVariableResolver</listener-class>
+	</listener>
+	<!-- It comes from ZK patch for https://nvd.nist.gov/vuln/detail/CVE-2022-36537. -->
+	<listener>
+	    <listener-class>com.hybris.cockpitng.zk.patch.AuUploadWebAppInit</listener-class>
+	</listener>
+
+	<session-config>
+		<device-type>ajax</device-type>
+		<automatic-timeout />
+		<timeout-uri>/</timeout-uri>
+	</session-config>
+
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/errorHandler.zul</location>
+	</error-page>
+</zk>
