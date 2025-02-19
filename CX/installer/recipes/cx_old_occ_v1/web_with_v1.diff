@@ -1,0 +1,20 @@
+--- web.xml	2020-02-28 12:21:25.000000000 +0100
++++ web_with_v1.xml	2020-02-28 12:23:07.000000000 +0100
+@@ -108,7 +108,7 @@
+ 
+ 	<!-- <v1-api> -->
+ 	<!-- Uncomment to make v1 version available -->
+-	<!--
++
+ 	<filter>
+ 		<description>
+ 			Spring configured chain of spring filter beans
+@@ -154,7 +154,7 @@
+ 		<servlet-name>springmvc-v1</servlet-name>
+ 		<url-pattern>/v1/medias/*</url-pattern>
+ 	</servlet-mapping>
+-	-->
++
+ 	<!-- END Uncomment to make v1 version available -->
+ 	<!-- </v1-api> -->
+ 

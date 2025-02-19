@@ -1,0 +1,12 @@
+--- ycommercewebservices-web-spring.xml	2020-02-28 12:21:39.000000000 +0100
++++ ycommercewebservices-web-spring_with_v1.xml	2020-02-28 12:22:44.000000000 +0100
+@@ -25,7 +25,7 @@
+ 
+ 	<!-- <v1-api> -->
+ 	<!-- Uncomment to enable version v1 -->
+-	<!--<import resource="config/v1-web-spring.xml"/>-->
++	<import resource="config/v1-web-spring.xml"/>
+ 	<!-- </v1-api> -->
+ 
+ 	<import resource="config/v2-web-spring.xml"/>
+
