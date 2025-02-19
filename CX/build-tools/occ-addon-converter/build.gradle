@@ -1,0 +1,57 @@
+/*
+ * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ */
+plugins {
+	id 'groovy'
+	id 'org.sonarqube' version '3.3'
+	id 'jacoco'
+}
+
+group = 'occ-addon-converter'
+description = 'OCC AddOn Converter'
+version = '2205.0'
+
+sourceCompatibility = 17
+
+if (project.hasProperty('internal')) {
+	apply from: 'build-internal.gradle'
+}
+else {
+	repositories {
+		mavenCentral()
+	}
+}
+
+tasks.sonarqube.dependsOn 'test'
+
+sonarqube {
+	properties {
+		property 'sonar.projectKey', project.name
+		property 'sonar.sources', (sourceSets.main.groovy.srcDirs + sourceSets.main.resources.srcDirs).join(',')
+	}
+}
+
+test {
+	finalizedBy jacocoTestReport
+}
+
+tasks.register('run', JavaExec) {
+	dependsOn 'classes'
+	mainClass = 'de.hybris.platform.tools.occ.addonconverter.CLIHandler'
+	classpath = sourceSets.main.runtimeClasspath
+}
+
+jar {
+	archiveFileName = "${project.name}.jar"
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	manifest {
+		attributes 'Main-Class': 'de.hybris.platform.tools.occ.addonconverter.CLIHandler'
+	}
+	from {
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+}
+
+dependencies {
+	implementation 'org.codehaus.groovy:groovy-all:3.0.9'
+}
